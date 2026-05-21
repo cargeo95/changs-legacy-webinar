@@ -1884,9 +1884,7 @@
   <section class="testimonials">
     <div class="video-grid">
 
-      <div class="video-card"
-           onmouseenter="this.querySelector('video').play()"
-           onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
+      <div class="video-card">
         <video id="vid1" src="testimonio/Testimonio 1.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
@@ -1897,9 +1895,7 @@
         </div>
       </div>
 
-      <div class="video-card"
-           onmouseenter="this.querySelector('video').play()"
-           onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
+      <div class="video-card">
         <video id="vid2" src="testimonio/Testimonio 2.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
@@ -1910,9 +1906,7 @@
         </div>
       </div>
 
-      <div class="video-card"
-           onmouseenter="this.querySelector('video').play()"
-           onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
+      <div class="video-card">
         <video id="vid3" src="testimonio/Testimonio 3.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
@@ -1923,9 +1917,7 @@
         </div>
       </div>
 
-      <div class="video-card"
-           onmouseenter="this.querySelector('video').play()"
-           onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
+      <div class="video-card">
         <video id="vid4" src="testimonio/WhatsApp Video 2026-03-24 at 7.59.26 PM.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
@@ -2151,6 +2143,30 @@
     }, { threshold: 0.2 });
 
     scaleEls.forEach(el => scaleObserver.observe(el));
+
+    // ── Video cards: hover (desktop) + tap (mobile) ──
+    document.querySelectorAll('.video-card').forEach(card => {
+      const video = card.querySelector('video');
+      if (!video) return;
+
+      // .playing class sigue el estado real del video
+      video.addEventListener('play',  () => card.classList.add('playing'));
+      video.addEventListener('pause', () => card.classList.remove('playing'));
+      video.addEventListener('ended', () => {
+        card.classList.remove('playing');
+        video.currentTime = 0;
+      });
+
+      // Desktop: hover reproduce / sale pausa
+      card.addEventListener('mouseenter', () => video.play().catch(() => {}));
+      card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+
+      // Mobile / click: tap alterna play-pause
+      card.addEventListener('click', () => {
+        if (video.paused) { video.play().catch(() => {}); }
+        else              { video.pause(); video.currentTime = 0; }
+      });
+    });
 
     // ── Rejection strike: scroll directo ──────────
     const rejectionItems = document.querySelectorAll('.rejection-item');
