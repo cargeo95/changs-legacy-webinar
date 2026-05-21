@@ -3,9 +3,9 @@ node_modules/
 package-lock.json
 
 # ── Videos grandes (van en GoHighLevel / Vimeo) ───
-*.mp4
+# Los testimonios van en el repo (< 15 MB c/u). VSL pesado va en GHL/Vimeo.
+Parte*.mp4
 *.mov
-*.MP4
 *.MOV
 *.webm
 
