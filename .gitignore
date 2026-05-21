@@ -1,0 +1,36 @@
+# ── Dependencias ──────────────────────────────────
+node_modules/
+package-lock.json
+
+# ── Videos grandes (van en GoHighLevel / Vimeo) ───
+*.mp4
+*.mov
+*.MP4
+*.MOV
+*.webm
+
+# ── Documentos de cliente (contexto interno) ──────
+contexto/
+
+# ── Variables de entorno ──────────────────────────
+.env
+.env.local
+.env.*
+
+# ── Claude Code ───────────────────────────────────
+.claude/
+
+# ── Sistema operativo ─────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editores ──────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Archivos temporales ───────────────────────────
+*.tmp
+*.log

@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los 3 Errores que Destrozan tu Crédito en USA — Chang's Legacy</title>
+  <meta name="description" content="Clase gratuita con Barbara Chang: descubre los 3 errores que están bloqueando tu crédito en USA y cómo pararlos desde esta semana. Miércoles 4 de junio, 7PM Atlanta." />
+  <meta name="author" content="Barbara Chang — Chang's Legacy Financial Services" />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:title" content="Los 3 Errores que Destrozan tu Crédito en USA" />
+  <meta property="og:description" content="Clase gratuita con Barbara Chang — Miércoles 4 de junio, 7PM Atlanta. Cupos limitados." />
+  <meta property="og:image" content="hero.JPG" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-deep:   #0B1C3D;
+      --navy-mid:    #112952;
+      --navy-light:  #1A3A6B;
+      --gold:        #C9973A;
+      --gold-light:  #E8B84B;
+      --gold-pale:   #FFF3D6;
+      --white:       #FFFFFF;
+      --gray-light:  #F4F6F9;
+      --gray-text:   #5A6478;
+      --text-dark:   #0B1C3D;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLL ANIMATIONS ───────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.6);
+      transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.15;
+    }
+
+    /* ─── NAVBAR ──────────────────────────────────── */
+    nav {
+      background: var(--navy-deep);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+
+    nav.scrolled {
+      background: rgba(11, 28, 61, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+      padding: 12px 40px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 48px;
+      height: 48px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--navy-deep);
+      letter-spacing: -1px;
+    }
+
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .logo-text span {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* ─── FLOATING CTA ───────────────────────────── */
+    .floating-cta {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      pointer-events: none;
+    }
+
+    .floating-cta.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .floating-cta a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 14px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 8px 32px rgba(201,151,58,0.5), 0 2px 8px rgba(0,0,0,0.3);
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .floating-cta a:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .floating-cta .pulse {
+      width: 10px;
+      height: 10px;
+      background: var(--navy-deep);
+      border-radius: 50%;
+      animation: pulse 1.6s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    /* ─── HERO ────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero.JPG');
+      background-size: cover;
+      background-position: center 30%;
+      transform: scale(1.04);
+      transition: transform 8s ease-out;
+    }
+
+    .hero-bg.loaded { transform: scale(1); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(6,14,31,0.88) 45%, rgba(6,14,31,0.35) 100%),
+        linear-gradient(to top,   rgba(6,14,31,0.7)  0%,  transparent       50%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 120px 40px 100px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,151,58,0.15);
+      border: 1px solid rgba(201,151,58,0.5);
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 1.6s infinite;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero h1 .line-accent {
+      display: block;
+      font-size: 0.55em;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: rgba(255,255,255,0.7);
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 44px;
+    }
+
+    .event-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .event-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(8px);
+      border-radius: 4px;
+      padding: 9px 16px;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+
+    .event-pill .icon { color: var(--gold); }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 18px 44px;
+      border-radius: 4px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 8px 40px rgba(201,151,58,0.45);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-hint {
+      display: block;
+      margin-top: 10px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.78rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.4;
+      animation: bounce 2.2s infinite;
+    }
+
+    .hero-scroll-hint span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .hero-scroll-hint svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─── COUNTDOWN ───────────────────────────────── */
+    .countdown-bar {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201,151,58,0.2);
+      border-bottom: 1px solid rgba(201,151,58,0.2);
+      padding: 28px 40px;
+      text-align: center;
+    }
+
+    .countdown-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cd-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cd-number {
+      background: var(--navy-deep);
+      border: 1px solid rgba(201,151,58,0.3);
+      border-radius: 6px;
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .cd-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── SECTION TAG (global) ────────────────────── */
+    .section-tag {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 4px;
+      margin-bottom: 22px;
+    }
+
+    /* ─── PAIN SECTION ────────────────────────────── */
+    .pain {
+      background: #060E1F;
+      padding: 100px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pain::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,151,58,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .pain-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pain-intro {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 64px;
+    }
+
+    .rejection-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 72px;
+    }
+
+    .rejection-item {
+      position: relative;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .rejection-item:first-child {
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .rejection-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 0;
+      background: rgba(201,151,58,0.05);
+      transition: width 0.4s ease;
+    }
+
+    .rejection-item:hover::before { width: 100%; }
+
+    .rejection-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.4rem, 3.5vw, 2.6rem);
+      color: rgba(255,255,255,0.82);
+      line-height: 1.1;
+      position: relative;
+      display: inline-block;
+      transition: color 0.4s;
+    }
+
+    .rejection-item:hover .rejection-text {
+      color: rgba(255,255,255,0.95);
+    }
+
+    .rejection-text::after {
+      content: '';
+      position: absolute;
+      left: -2%;
+      top: 50%;
+      width: 104%;
+      height: 3px;
+      background: #C0392B;
+      transform: translateY(-50%) scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.77,0,0.18,1);
+    }
+
+    .rejection-item.struck .rejection-text::after {
+      transform: translateY(-50%) scaleX(1);
+    }
+
+    .rejection-item.struck .rejection-text {
+      color: rgba(255,255,255,0.32);
+    }
+
+    .rejection-label {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(192,57,43,0.25);
+      border: 1px solid rgba(231,76,60,0.6);
+      color: #FF6B6B;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+      opacity: 0;
+      transition: opacity 0.4s 0.3s;
+    }
+
+    .rejection-item.struck .rejection-label { opacity: 1; }
+
+    .pain-break {
+      margin: 0 auto 64px;
+      max-width: 640px;
+    }
+
+    .pain-break-line {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .pain-break-line::before,
+    .pain-break-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,151,58,0.4), transparent);
+    }
+
+    .pain-break-line span {
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    .pain-truth {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.54rem, 2.8vw, 2.1rem);
+      color: var(--white);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+
+    .pain-truth em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .pain-sub {
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.75;
+    }
+
+    /* ─── WHAT YOU'LL LEARN ───────────────────────── */
+    .learn {
+      background: var(--navy-mid);
+      border-top: 3px solid var(--gold);
+    }
+
+    .learn-intro {
+      text-align: center;
+      padding: 90px 40px 60px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .learn-intro h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 900;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .learn-intro h2 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .learn-intro p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    /* split layout */
+    .learn-split {
+      display: flex;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* sticky photo column */
+    .learn-photo-col {
+      width: 420px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 72px;
+      align-self: flex-start;
+    }
+
+    .learn-photo-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .learn-photo-wrap img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .learn-photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 65%, var(--navy-mid) 100%);
+      border-radius: 12px 12px 0 0;
+      pointer-events: none;
+    }
+
+    .learn-photo-quote {
+      background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+      border: 1px solid rgba(201,151,58,0.3);
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      padding: 24px 28px;
+    }
+
+    .learn-photo-quote p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .learn-photo-quote p em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .learn-photo-quote span {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* errors column */
+    .learn-errors-col {
+      flex: 1;
+      padding-left: 60px;
+    }
+
+    .error-strip {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .error-strip.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .error-strip-inner { width: 100%; }
+
+    .error-strip-num {
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(8rem, 14vw, 14rem);
+      color: rgba(201,151,58,0.06);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .error-strip-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .error-strip-tag::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .error-strip h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .error-strip p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.75;
+      max-width: 480px;
+    }
+
+    .error-strip-icon {
+      font-size: 2.8rem;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    /* CTA below split */
+    .learn-cta {
+      text-align: center;
+      padding: 80px 40px;
+      background: linear-gradient(to bottom, var(--navy-mid), var(--navy-deep));
+    }
+
+    .learn-cta-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .learn-cta h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+
+    .learn-cta h3 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    /* ─── ABOUT BARBARA ───────────────────────────── */
+    .about {
+      background: var(--gray-light);
+      padding: 90px 40px;
+    }
+
+    .about-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .about-image-placeholder {
+      width: 100%;
+      height: 420px;
+      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .about-image-placeholder .ph-icon {
+      font-size: 3.5rem;
+      opacity: 0.25;
+    }
+
+    .about-image-placeholder p {
+      color: rgba(255,255,255,0.25);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 12px 18px;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 1.3;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .about-content h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 900;
+      color: var(--navy-deep);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .about-content h2 span {
+      color: var(--gold);
+    }
+
+    .about-content p {
+      font-size: 1rem;
+      color: var(--gray-text);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(11,28,61,0.1);
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: var(--navy-deep);
+      line-height: 1;
+    }
+
+    .stat-number span {
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray-text);
+      font-weight: 600;
+    }
+
+    /* ─── TESTIMONIALS ────────────────────────────── */
+    .testimonials {
+      background: #060E1F;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      padding: 0 40px 64px;
+    }
+
+    .testimonials-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      font-weight: 900;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .testimonials-header h2 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .testimonials-header p {
+      color: rgba(255,255,255,0.5);
+      font-size: 1rem;
+    }
+
+    /* video grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      width: 100%;
+    }
+
+    .video-card {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--navy-deep);
+    }
+
+    .video-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .video-card:hover video {
+      transform: scale(1.04);
+    }
+
+    /* default overlay */
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(6,14,31,0.95) 0%,
+        rgba(6,14,31,0.4)  45%,
+        rgba(6,14,31,0.15) 100%
+      );
+      transition: background 0.4s ease;
+      z-index: 1;
+    }
+
+    .video-card:hover .video-overlay,
+    .video-card.playing .video-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(6,14,31,0.5)  0%,
+        rgba(6,14,31,0.05) 50%,
+        transparent        100%
+      );
+    }
+
+    /* play button */
+    .video-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(201,151,58,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .video-play svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--navy-deep);
+      margin-left: 3px;
+    }
+
+    .video-card:hover .video-play {
+      background: rgba(201,151,58,1);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .video-card.playing .video-play {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      pointer-events: none;
+    }
+
+    /* text info at bottom */
+    .video-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 18px;
+      z-index: 3;
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .video-stars {
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    .video-quote {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.55;
+      font-style: italic;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: opacity 0.3s;
+    }
+
+    .video-card:hover .video-quote,
+    .video-card.playing .video-quote {
+      opacity: 0;
+    }
+
+    .video-author {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--white);
+    }
+
+    .video-author span {
+      display: block;
+      font-weight: 400;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 2px;
+    }
+
+    /* divider between cards */
+    .video-card + .video-card {
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+
+    @media (max-width: 860px) {
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-card { aspect-ratio: 9 / 14; }
+    }
+
+    /* ─── REGISTRO ────────────────────────────────── */
+    .registro {
+      background: var(--navy-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .registro::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,151,58,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 0% 0%,   rgba(17,41,82,0.6)    0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .registro-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .registro-copy h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .registro-copy h2 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .registro-copy p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .registro-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .registro-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .registro-trust-item::before {
+      content: '✓';
+      width: 22px;
+      height: 22px;
+      background: rgba(201,151,58,0.2);
+      border: 1px solid rgba(201,151,58,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--gold-light);
+      flex-shrink: 0;
+    }
+
+    /* form box */
+    .registro-form-box {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,151,58,0.45);
+      border-radius: 12px;
+      padding: 44px 40px;
+      backdrop-filter: blur(10px);
+    }
+
+    .registro-form-box h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .registro-form-box .form-sub {
+      text-align: center;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 32px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 6px;
+      padding: 14px 16px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-group input::placeholder {
+      color: rgba(255,255,255,0.45);
+    }
+
+    .form-group input:focus {
+      border-color: var(--gold);
+      background: rgba(201,151,58,0.1);
+    }
+
+    .btn-registro {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 8px 32px rgba(201,151,58,0.35);
+    }
+
+    .btn-registro:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .form-disclaimer {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 14px;
+      line-height: 1.5;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .form-urgency {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    .form-urgency::before { content: '⚡'; }
+
+    /* ─── FOOTER ──────────────────────────────────── */
+    footer {
+      background: #030912;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 40px 40px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .footer-social a:hover {
+      background: rgba(201,151,58,0.15);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 6px;
+    }
+
+    .footer-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom p {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+    }
+
+    .footer-bottom .copyright {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-main { grid-template-columns: 1fr; gap: 36px; padding: 40px 20px 28px; }
+      .footer-bottom { padding: 16px 20px; flex-direction: column; text-align: center; }
+    }
+
+    /* ─── DIVIDER ─────────────────────────────────── */
+    .gold-divider {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border: none;
+    }
+
+    /* ─── RESPONSIVE — tablet / móvil grande (≤ 860px) ── */
+    @media (max-width: 860px) {
+
+      /* nav */
+      nav { padding: 14px 20px; }
+      .logo-text { font-size: 0.85rem; }
+      .nav-cta { font-size: 0.72rem; padding: 8px 14px; }
+
+      /* hero */
+      .hero-inner { padding: 100px 24px 80px; }
+      .hero-overlay {
+        background: linear-gradient(to bottom, rgba(6,14,31,0.78) 0%, rgba(6,14,31,0.92) 100%);
+      }
+      .event-info { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .event-pill { font-size: 0.78rem; padding: 8px 14px; }
+      .hero-scroll-hint { display: none; }
+
+      /* countdown */
+      .countdown-timer { gap: 12px; }
+      .cd-number { width: 58px; height: 58px; font-size: 1.6rem; }
+
+      /* pain */
+      .pain { padding: 60px 20px; }
+      .rejection-text { font-size: clamp(1rem, 5vw, 1.8rem); }
+      .rejection-label { display: none; }
+      .pain-truth { font-size: clamp(1.1rem, 4vw, 1.5rem); }
+      .pain-sub { font-size: 0.95rem; }
+
+      /* learn */
+      .learn-intro { padding: 60px 20px 40px; }
+      .learn-split { flex-direction: column; padding: 0 20px; }
+      .learn-photo-col { width: 100%; max-width: 360px; margin: 0 auto; position: static; }
+      .learn-errors-col { padding-left: 0; }
+      .error-strip { min-height: auto; padding: 36px 0; }
+      .error-strip-num { font-size: 5rem; opacity: 0.04; }
+      .learn-cta { padding: 56px 20px; }
+
+      /* about */
+      .about { padding: 60px 20px; }
+      .about-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .about-image { max-width: 280px; margin: 0 auto; }
+      .about-badge { right: 0; bottom: -12px; font-size: 0.7rem; padding: 10px 14px; }
+      .stats-row { justify-content: center; }
+
+      /* registro */
+      .registro-inner { grid-template-columns: 1fr; padding: 60px 20px; gap: 36px; }
+      .registro-form-box { padding: 32px 24px; }
+
+      /* floating cta */
+      .floating-cta { bottom: 16px; right: 16px; }
+      .floating-cta a { font-size: 0.78rem; padding: 12px 18px; }
+    }
+
+    /* ─── RESPONSIVE — móvil pequeño (≤ 480px) ──────── */
+    @media (max-width: 480px) {
+
+      /* nav */
+      .logo-text { display: none; }
+      .nav-cta { font-size: 0.7rem; padding: 8px 12px; }
+
+      /* hero */
+      .hero-inner { padding: 80px 20px 60px; }
+      .btn-primary { padding: 16px 28px; font-size: 0.9rem; }
+
+      /* countdown */
+      .countdown-bar { padding: 20px 16px; }
+      .countdown-timer { gap: 8px; }
+      .cd-number { width: 50px; height: 50px; font-size: 1.4rem; }
+      .countdown-label { font-size: 0.7rem; }
+
+      /* pain */
+      .rejection-text { font-size: clamp(0.9rem, 4.5vw, 1.4rem); }
+      .pain-break { padding: 0 4px; }
+
+      /* video grid */
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-card { aspect-ratio: 9 / 14; }
+      .video-quote { -webkit-line-clamp: 2; }
+
+      /* registro */
+      .registro-form-box { padding: 28px 18px; }
+      .registro-form-box h3 { font-size: 0.95rem; }
+      .btn-registro { font-size: 0.88rem; padding: 16px; }
+
+      /* footer */
+      .footer-main { padding: 36px 20px 24px; }
+      .footer-bottom { padding: 14px 20px; }
+      .footer-social a { width: 34px; height: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="#registro">
+      <span class="pulse"></span>
+      Reservar mi lugar gratis
+    </a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">
+      <div class="logo-badge">CL</div>
+      <div class="logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
+    </div>
+    <a href="#registro" class="nav-cta">Reservar mi lugar</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+      <h1>
+        <span class="line-accent">Así se ve cuando</span>
+        Tu Crédito<br><em>Cambia</em><br>Tu Vida.
+      </h1>
+
+      <p class="hero-sub">
+        Una clase gratuita donde te revelo los 3 errores que están bloqueando tu futuro financiero —
+        y cómo pararlos desde esta semana, sin importar cómo está tu crédito hoy.
+      </p>
+
+      <div class="event-info">
+        <div class="event-pill"><span class="icon">📅</span> Miércoles 4 de Junio</div>
+        <div class="event-pill"><span class="icon">🕖</span> 7PM Atlanta · 6PM Colombia</div>
+        <div class="event-pill"><span class="icon">💻</span> En vivo por Zoom</div>
+        <div class="event-pill"><span class="icon">✅</span> 100% Gratuito</div>
+      </div>
+
+      <a href="#registro" class="btn-primary">Quiero mi lugar gratis</a>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Sigue leyendo</span>
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-bar">
+    <div class="countdown-label">La clase empieza en</div>
+    <div class="countdown-timer">
+      <div class="cd-unit">
+        <div class="cd-number" id="cd-days">00</div>
+        <div class="cd-label">Días</div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-number" id="cd-hours">00</div>
+        <div class="cd-label">Horas</div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-number" id="cd-minutes">00</div>
+        <div class="cd-label">Minutos</div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-number" id="cd-seconds">00</div>
+        <div class="cd-label">Segundos</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="gold-divider" />
+
+  <!-- PAIN -->
+  <section class="pain">
+    <div class="pain-inner">
+
+      <p class="pain-intro reveal">¿Cuántas veces te dijeron esto?</p>
+
+      <ul class="rejection-list">
+        <li class="rejection-item">
+          <span class="rejection-text">"Lo sentimos, su solicitud fue denegada."</span>
+          <span class="rejection-label">Denegado</span>
+        </li>
+        <li class="rejection-item">
+          <span class="rejection-text">"Su score no califica para este préstamo."</span>
+          <span class="rejection-label">Rechazado</span>
+        </li>
+        <li class="rejection-item">
+          <span class="rejection-text">"Necesitamos un co-firmante."</span>
+          <span class="rejection-label">Insuficiente</span>
+        </li>
+        <li class="rejection-item">
+          <span class="rejection-text">"La tasa más baja que le podemos ofrecer es…"</span>
+          <span class="rejection-label">Interés alto</span>
+        </li>
+      </ul>
+
+      <div class="pain-break reveal-scale">
+        <div class="pain-break-line"><span>✦</span></div>
+        <p class="pain-truth">
+          El problema no es que no trabajes suficiente.<br>
+          <em>Es que nadie te enseñó cómo funciona el sistema.</em>
+        </p>
+        <p class="pain-sub">
+          En USA hay un número que controla casi todo — tu credit score.
+          Cuando no sabes cómo funciona, cometes errores sin querer
+          que te cuestan más intereses, más rechazos, y más años pagando lo que no deberías.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="learn">
+
+    <div class="learn-intro reveal">
+      <span class="section-tag">En esta clase gratuita</span>
+      <h2>Te Voy a Revelar<br><em>Los 3 Errores Exactos</em></h2>
+      <p>Errores que están bloqueando el futuro financiero de miles de familias latinas hoy mismo — y que se pueden eliminar completamente cuando alguien te los señala.</p>
+    </div>
+
+    <div class="learn-split">
+
+      <!-- FOTO STICKY -->
+      <div class="learn-photo-col">
+        <div class="learn-photo-wrap">
+          <img src="IMG_5203%203.JPG" alt="Barbara Chang" />
+        </div>
+        <div class="learn-photo-quote">
+          <p>"Nadie nace sabiendo cómo funciona el sistema crediticio americano. Pero una vez que lo entiendes, <em>todo cambia.</em>"</p>
+          <span>— Barbara Chang, Chang's Legacy</span>
+        </div>
+      </div>
+
+      <!-- ERRORES -->
+      <div class="learn-errors-col">
+
+        <div class="error-strip">
+          <div class="error-strip-num">01</div>
+          <div class="error-strip-inner">
+            <span class="error-strip-icon">💳</span>
+            <div class="error-strip-tag">Error 01</div>
+            <h3>El Error de Uso que<br>Destruye tu Score</h3>
+            <p>Lo que haces con tu crédito disponible tiene más impacto del que imaginas. La mayoría lo hace mal sin saberlo — y cada mes que pasa, el daño se acumula.</p>
+          </div>
+        </div>
+
+        <div class="error-strip">
+          <div class="error-strip-num">02</div>
+          <div class="error-strip-inner">
+            <span class="error-strip-icon">📋</span>
+            <div class="error-strip-tag">Error 02</div>
+            <h3>El Historial que<br>te Persigue en Silencio</h3>
+            <p>Hay información en tu reporte que puede estar incorrecta o desactualizada. Y lo más importante: legalmente tienes todo el derecho de corregirla.</p>
+          </div>
+        </div>
+
+        <div class="error-strip">
+          <div class="error-strip-num">03</div>
+          <div class="error-strip-inner">
+            <span class="error-strip-icon">⏱️</span>
+            <div class="error-strip-tag">Error 03</div>
+            <h3>El Tiempo que<br>Pierdes sin Actuar</h3>
+            <p>Cada mes sin una estrategia clara es un mes que el sistema trabaja en tu contra. El momento de actuar no es "cuando esté listo" — es ahora.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="learn-cta">
+      <p class="learn-cta-eyebrow">¿Ya te reconociste en alguno?</p>
+      <h3>El 4 de Junio te explico<br>cómo <em>eliminarlos para siempre.</em></h3>
+      <a href="#registro" class="btn-primary">Reservar mi lugar gratis</a>
+    </div>
+
+  </section>
+
+  <hr class="gold-divider" />
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-inner">
+      <div class="about-image reveal-left">
+        <!-- Reemplaza con: <img src="barbara-about.jpg" alt="Barbara Chang" /> -->
+        <div class="about-image-placeholder">
+          <span class="ph-icon">👤</span>
+          <p>Foto de Barbara</p>
+        </div>
+        <div class="about-badge">FCRA &amp; CROA<br>Certified Expert</div>
+      </div>
+
+      <div class="about-content reveal-right">
+        <span class="section-tag">Quién te va a enseñar</span>
+        <h2>Soy <span>Barbara Chang</span> —<br>Y ya crucé al otro lado.</h2>
+        <p>
+          Fundadora de Chang's Legacy Financial Services, especialista certificada en reparación
+          y construcción de crédito bajo las leyes federales FCRA y CROA.
+        </p>
+        <p>
+          He ayudado a familias latinas en todo Estados Unidos a entender el sistema crediticio,
+          limpiar su historial, y abrir las puertas que antes les estaban cerradas:
+          hipotecas, carros, negocios propios.
+        </p>
+        <p>
+          No es teoría. Es el mismo camino que yo recorrí — y que mis clientes recorren
+          con resultados reales en 90 días.
+        </p>
+
+        <div class="stats-row">
+          <div class="stat">
+            <div class="stat-number">+<span>500</span></div>
+            <div class="stat-label">Familias ayudadas</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number"><span>90</span></div>
+            <div class="stat-label">Días promedio de cambio</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number"><span>10</span>+</div>
+            <div class="stat-label">Años de experiencia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="video-grid">
+
+      <div class="video-card"
+           onmouseenter="this.querySelector('video').play()"
+           onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
+        <video id="vid1" src="testimonio/Testimonio 1.mp4" muted playsinline preload="auto"></video>
+        <div class="video-overlay"></div>
+        <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="video-info">
+          <div class="video-stars">★★★★★</div>
+          <p class="video-quote">"Tenía el crédito destruido. En 3 meses con Barbara califiqué para mi primer apartamento sola."</p>
+          <div class="video-author">María L. <span>Atlanta, Georgia</span></div>
+        </div>
+      </div>
+
+      <div class="video-card"
+           onmouseenter="this.querySelector('video').play()"
+           onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
+        <video id="vid2" src="testimonio/Testimonio 2.mp4" muted playsinline preload="auto"></video>
+        <div class="video-overlay"></div>
+        <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="video-info">
+          <div class="video-stars">★★★★★</div>
+          <p class="video-quote">"Me rechazaron 2 veces para un carro. En 90 días me aprobaron con una tasa que no esperaba."</p>
+          <div class="video-author">Carlos R. <span>Charlotte, NC</span></div>
+        </div>
+      </div>
+
+      <div class="video-card"
+           onmouseenter="this.querySelector('video').play()"
+           onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
+        <video id="vid3" src="testimonio/Testimonio 3.mp4" muted playsinline preload="auto"></video>
+        <div class="video-overlay"></div>
+        <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="video-info">
+          <div class="video-stars">★★★★★</div>
+          <p class="video-quote">"Por fin alguien que me explicó en español cómo funciona. Mi score subió 87 puntos en dos meses."</p>
+          <div class="video-author">Ana G. <span>Miami, Florida</span></div>
+        </div>
+      </div>
+
+      <div class="video-card"
+           onmouseenter="this.querySelector('video').play()"
+           onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
+        <video id="vid4" src="testimonio/WhatsApp Video 2026-03-24 at 7.59.26 PM.mp4" muted playsinline preload="auto"></video>
+        <div class="video-overlay"></div>
+        <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="video-info">
+          <div class="video-stars">★★★★★</div>
+          <p class="video-quote">"No sabía por dónde empezar. Barbara me dio el paso a paso y hoy tengo un crédito que me abre puertas."</p>
+          <div class="video-author">Laura M. <span>Houston, Texas</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REGISTRO -->
+  <section class="registro" id="registro">
+    <div class="registro-inner">
+
+      <div class="registro-copy reveal-left">
+        <span class="section-tag">Reserva tu lugar ahora</span>
+        <h2>No necesitas el<br>crédito perfecto.<br><em>Solo saber<br>cómo funciona.</em></h2>
+        <p>
+          El 4 de junio te revelo exactamente cuáles son esos 3 errores,
+          por qué hacen tanto daño sin que lo notes,
+          y qué puedes hacer desde esa misma semana para empezar a cambiar tu situación.
+        </p>
+        <div class="registro-trust">
+          <div class="registro-trust-item">100% gratuito, sin compromisos</div>
+          <div class="registro-trust-item">Miércoles 4 de junio · 7PM Atlanta / 6PM Colombia</div>
+          <div class="registro-trust-item">Clase en vivo por Zoom — con preguntas en directo</div>
+          <div class="registro-trust-item">Cupos limitados</div>
+        </div>
+      </div>
+
+      <div class="registro-form-box reveal-right">
+        <h3>Reserva tu lugar gratis</h3>
+        <p class="form-sub">Completa el formulario y te enviamos el link de acceso</p>
+
+        <!-- TODO: reemplazar con embed de GoHighLevel -->
+        <form onsubmit="return false;">
+          <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="tu@correo.com" />
+          </div>
+          <div class="form-group">
+            <label>Teléfono (WhatsApp)</label>
+            <input type="tel" placeholder="+1 (000) 000-0000" />
+          </div>
+          <button type="submit" class="btn-registro">
+            Reservar mi lugar gratis ahora →
+          </button>
+        </form>
+
+        <p class="form-disclaimer">Tu información está segura. No spam, solo el link de acceso.</p>
+        <div class="form-urgency">Los cupos se llenan antes del evento</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-badge">CL</div>
+          <div class="logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
+        </div>
+        <p>
+          Chang's Legacy LLC proporciona educación financiera y estrategia de crédito.
+          No somos abogados, asesores financieros ni contadores.
+          Los resultados de crédito varían según la situación individual.
+          Los testimonios son experiencias reales pero no garantizan resultados similares.
+        </p>
+        <div class="footer-social">
+          <!-- Reemplaza los href con las URLs reales de Barbara -->
+          <a href="#" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" title="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.73a4.85 4.85 0 0 1-1.01-.04z"/></svg>
+          </a>
+          <a href="#" title="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos de Servicio</a>
+        <a href="#registro">Reservar mi lugar</a>
+        <a href="https://changslegacy.com" target="_blank">changslegacy.com</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        Chang's Legacy LLC · Educación financiera y estrategia de crédito.<br>
+        Este evento es educativo. Los resultados individuales pueden variar.
+      </p>
+      <span class="copyright">© 2026 Chang's Legacy LLC. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script>
+    // ── Countdown ──────────────────────────────────
+    const eventDate = new Date('2026-06-04T19:00:00-04:00');
+
+    function updateCountdown() {
+      const diff = eventDate - new Date();
+      if (diff <= 0) {
+        document.querySelector('.countdown-bar').innerHTML =
+          '<div style="font-family:Montserrat,sans-serif;font-weight:800;color:var(--gold);font-size:1.2rem;text-align:center;">¡El evento está comenzando ahora!</div>';
+        return;
+      }
+      document.getElementById('cd-days').textContent    = String(Math.floor(diff / 86400000)).padStart(2,'0');
+      document.getElementById('cd-hours').textContent   = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
+      document.getElementById('cd-minutes').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+      document.getElementById('cd-seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── Hero bg zoom-in on load ────────────────────
+    window.addEventListener('load', () => {
+      document.getElementById('heroBg').classList.add('loaded');
+    });
+
+    // ── Sticky nav ─────────────────────────────────
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ── Floating CTA ───────────────────────────────
+    const floatingCta = document.getElementById('floatingCta');
+    const heroSection  = document.querySelector('.hero');
+
+    const ctaObserver = new IntersectionObserver((entries) => {
+      floatingCta.classList.toggle('show', !entries[0].isIntersecting);
+    }, { threshold: 0.1 });
+    ctaObserver.observe(heroSection);
+
+    // ── Error strips reveal ────────────────────────
+    const errorStrips = document.querySelectorAll('.error-strip');
+    const stripObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          stripObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    errorStrips.forEach(s => stripObserver.observe(s));
+
+    // ── Scroll reveal (one-way) ────────────────────
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // ── Reveal-scale: bidireccional ────────────────
+    const scaleEls = document.querySelectorAll('.reveal-scale');
+
+    const scaleObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('visible', entry.isIntersecting);
+      });
+    }, { threshold: 0.2 });
+
+    scaleEls.forEach(el => scaleObserver.observe(el));
+
+    // ── Rejection strike: bidireccional ───────────
+    const rejectionItems = document.querySelectorAll('.rejection-item');
+
+    const strikeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('struck', entry.isIntersecting);
+      });
+    }, {
+      threshold: 0,
+      rootMargin: '0px 0px -38% 0px'
+    });
+
+    rejectionItems.forEach(item => strikeObserver.observe(item));
+
+  </script>
+
+</body>
+</html>
