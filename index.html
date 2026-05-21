@@ -118,18 +118,12 @@
     }
 
     .logo-badge {
-      width: 48px;
-      height: 48px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 1rem;
-      color: var(--navy-deep);
-      letter-spacing: -1px;
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 4px;
     }
 
     .logo-text {
@@ -199,6 +193,19 @@
     .floating-cta a:hover {
       background: var(--gold-light);
       transform: translateY(-2px);
+    }
+
+    .fcta-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .fcta-text small {
+      font-size: 0.65rem;
+      font-weight: 600;
+      opacity: 0.75;
+      letter-spacing: 0.03em;
     }
 
     .floating-cta .pulse {
@@ -543,35 +550,36 @@
       font-weight: 800;
       font-size: clamp(1.4rem, 3.5vw, 2.6rem);
       color: rgba(255,255,255,0.82);
-      line-height: 1.1;
-      position: relative;
-      display: inline-block;
-      transition: color 0.4s;
+      line-height: 1.2;
+      transition: color 0.4s ease;
+      display: block;
     }
 
     .rejection-item:hover .rejection-text {
       color: rgba(255,255,255,0.95);
     }
 
-    .rejection-text::after {
-      content: '';
-      position: absolute;
-      left: -2%;
-      top: 50%;
-      width: 104%;
-      height: 3px;
-      background: #C0392B;
-      transform: translateY(-50%) scaleX(0);
-      transform-origin: left;
-      transition: transform 0.5s cubic-bezier(0.77,0,0.18,1);
-    }
-
-    .rejection-item.struck .rejection-text::after {
-      transform: translateY(-50%) scaleX(1);
-    }
-
     .rejection-item.struck .rejection-text {
-      color: rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.28);
+    }
+
+    /* barra roja independiente del texto */
+    .strike-bar {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 4px;
+      width: 0%;
+      background: #E74C3C;
+      border-radius: 2px;
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .rejection-item.struck .strike-bar {
+      width: 100%;
     }
 
     .rejection-label {
@@ -1147,6 +1155,14 @@
       margin-top: 2px;
     }
 
+    .video-card.no-video video { display: none; }
+    .video-card.no-video .video-play { display: none; }
+    .video-card.no-video { background: var(--navy-mid); cursor: default; }
+    .video-card.no-video .video-overlay {
+      background: linear-gradient(to top, rgba(6,14,31,0.95) 0%, rgba(17,41,82,0.6) 100%);
+    }
+    .video-card.no-video .video-quote { opacity: 1; -webkit-line-clamp: 4; }
+
     /* divider between cards */
     .video-card + .video-card {
       border-left: 1px solid rgba(255,255,255,0.06);
@@ -1257,6 +1273,67 @@
       margin-bottom: 6px;
       text-transform: uppercase;
       letter-spacing: 0.03em;
+    }
+
+    .form-countdown {
+      background: rgba(201,151,58,0.08);
+      border: 1px solid rgba(201,151,58,0.3);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .form-cd-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .form-cd-units {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .form-cd-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      min-width: 40px;
+    }
+
+    .form-cd-unit span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .form-cd-unit small {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .form-cd-sep {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: rgba(201,151,58,0.5);
+      margin-bottom: 12px;
+      align-self: flex-start;
+      padding-top: 4px;
     }
 
     .registro-form-box .form-sub {
@@ -1510,8 +1587,15 @@
       .registro-form-box { padding: 32px 24px; }
 
       /* floating cta */
-      .floating-cta { bottom: 16px; right: 16px; }
-      .floating-cta a { font-size: 0.78rem; padding: 12px 18px; }
+      .floating-cta { bottom: 16px; right: 16px; left: 16px; }
+      .floating-cta a {
+        font-size: 0.82rem;
+        padding: 13px 20px;
+        border-radius: 12px;
+        justify-content: center;
+        width: 100%;
+      }
+      .fcta-text small { font-size: 0.7rem; opacity: 0.85; }
     }
 
     /* ─── RESPONSIVE — móvil pequeño (≤ 480px) ──────── */
@@ -1545,6 +1629,11 @@
       .registro-form-box h3 { font-size: 0.95rem; }
       .btn-registro { font-size: 0.88rem; padding: 16px; }
 
+      /* floating cta — full width con tiempo visible */
+      .floating-cta { bottom: 12px; right: 12px; left: 12px; }
+      .floating-cta a { border-radius: 10px; padding: 12px 16px; font-size: 0.8rem; width: 100%; justify-content: center; }
+      .fcta-text small { display: block; font-size: 0.68rem; }
+
       /* footer */
       .footer-main { padding: 36px 20px 24px; }
       .footer-bottom { padding: 14px 20px; }
@@ -1558,14 +1647,17 @@
   <div class="floating-cta" id="floatingCta">
     <a href="#registro">
       <span class="pulse"></span>
-      Reservar mi lugar gratis
+      <span class="fcta-text">
+        Reservar mi lugar gratis
+        <small id="fcta-time"></small>
+      </span>
     </a>
   </div>
 
   <!-- NAV -->
   <nav>
     <div class="logo">
-      <div class="logo-badge">CL</div>
+      <img src="logo.png" alt="Chang's Legacy" class="logo-badge" />
       <div class="logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
     </div>
     <a href="#registro" class="nav-cta">Reservar mi lugar</a>
@@ -1636,18 +1728,22 @@
 
       <ul class="rejection-list">
         <li class="rejection-item">
+          <div class="strike-bar"></div>
           <span class="rejection-text">"Lo sentimos, su solicitud fue denegada."</span>
           <span class="rejection-label">Denegado</span>
         </li>
         <li class="rejection-item">
+          <div class="strike-bar"></div>
           <span class="rejection-text">"Su score no califica para este préstamo."</span>
           <span class="rejection-label">Rechazado</span>
         </li>
         <li class="rejection-item">
+          <div class="strike-bar"></div>
           <span class="rejection-text">"Necesitamos un co-firmante."</span>
           <span class="rejection-label">Insuficiente</span>
         </li>
         <li class="rejection-item">
+          <div class="strike-bar"></div>
           <span class="rejection-text">"La tasa más baja que le podemos ofrecer es…"</span>
           <span class="rejection-label">Interés alto</span>
         </li>
@@ -1791,7 +1887,7 @@
       <div class="video-card"
            onmouseenter="this.querySelector('video').play()"
            onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
-        <video id="vid1" src="testimonio/Testimonio 1.mp4" muted playsinline preload="auto"></video>
+        <video id="vid1" src="testimonio/Testimonio 1.mp4" muted playsinline preload="none" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
         <div class="video-info">
@@ -1804,7 +1900,7 @@
       <div class="video-card"
            onmouseenter="this.querySelector('video').play()"
            onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
-        <video id="vid2" src="testimonio/Testimonio 2.mp4" muted playsinline preload="auto"></video>
+        <video id="vid2" src="testimonio/Testimonio 2.mp4" muted playsinline preload="none" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
         <div class="video-info">
@@ -1817,7 +1913,7 @@
       <div class="video-card"
            onmouseenter="this.querySelector('video').play()"
            onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
-        <video id="vid3" src="testimonio/Testimonio 3.mp4" muted playsinline preload="auto"></video>
+        <video id="vid3" src="testimonio/Testimonio 3.mp4" muted playsinline preload="none" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
         <div class="video-info">
@@ -1830,7 +1926,7 @@
       <div class="video-card"
            onmouseenter="this.querySelector('video').play()"
            onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;">
-        <video id="vid4" src="testimonio/WhatsApp Video 2026-03-24 at 7.59.26 PM.mp4" muted playsinline preload="auto"></video>
+        <video id="vid4" src="testimonio/WhatsApp Video 2026-03-24 at 7.59.26 PM.mp4" muted playsinline preload="none" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
         <div class="video-info">
@@ -1865,6 +1961,18 @@
 
       <div class="registro-form-box reveal-right">
         <h3>Reserva tu lugar gratis</h3>
+        <div class="form-countdown">
+          <div class="form-cd-label">La clase empieza en</div>
+          <div class="form-cd-units">
+            <div class="form-cd-unit"><span id="fcd-days">00</span><small>días</small></div>
+            <div class="form-cd-sep">:</div>
+            <div class="form-cd-unit"><span id="fcd-hours">00</span><small>hrs</small></div>
+            <div class="form-cd-sep">:</div>
+            <div class="form-cd-unit"><span id="fcd-minutes">00</span><small>min</small></div>
+            <div class="form-cd-sep">:</div>
+            <div class="form-cd-unit"><span id="fcd-seconds">00</span><small>seg</small></div>
+          </div>
+        </div>
         <p class="form-sub">Completa el formulario y te enviamos el link de acceso</p>
 
         <!-- TODO: reemplazar con embed de GoHighLevel -->
@@ -1899,7 +2007,7 @@
 
       <div class="footer-brand">
         <div class="logo">
-          <div class="logo-badge">CL</div>
+          <img src="logo.png" alt="Chang's Legacy" class="logo-badge" />
           <div class="logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
         </div>
         <p>
@@ -1944,8 +2052,10 @@
   </footer>
 
   <script>
-    // ── Countdown ──────────────────────────────────
+    // ── Countdown (shared) ─────────────────────────
     const eventDate = new Date('2026-06-04T19:00:00-04:00');
+
+    function pad(n) { return String(n).padStart(2,'0'); }
 
     function updateCountdown() {
       const diff = eventDate - new Date();
@@ -1954,10 +2064,33 @@
           '<div style="font-family:Montserrat,sans-serif;font-weight:800;color:var(--gold);font-size:1.2rem;text-align:center;">¡El evento está comenzando ahora!</div>';
         return;
       }
-      document.getElementById('cd-days').textContent    = String(Math.floor(diff / 86400000)).padStart(2,'0');
-      document.getElementById('cd-hours').textContent   = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
-      document.getElementById('cd-minutes').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
-      document.getElementById('cd-seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+
+      // countdown bar principal
+      document.getElementById('cd-days').textContent    = pad(d);
+      document.getElementById('cd-hours').textContent   = pad(h);
+      document.getElementById('cd-minutes').textContent = pad(m);
+      document.getElementById('cd-seconds').textContent = pad(s);
+
+      // mini countdown del form
+      const fcdEl = document.getElementById('fcd-days');
+      if (fcdEl) {
+        document.getElementById('fcd-days').textContent    = pad(d);
+        document.getElementById('fcd-hours').textContent   = pad(h);
+        document.getElementById('fcd-minutes').textContent = pad(m);
+        document.getElementById('fcd-seconds').textContent = pad(s);
+      }
+
+      // floating CTA time label
+      const ftEl = document.getElementById('fcta-time');
+      if (ftEl) {
+        ftEl.textContent = d > 0
+          ? `Faltan ${d}d ${pad(h)}h ${pad(m)}m`
+          : `Faltan ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+      }
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
@@ -2019,19 +2152,21 @@
 
     scaleEls.forEach(el => scaleObserver.observe(el));
 
-    // ── Rejection strike: bidireccional ───────────
+    // ── Rejection strike: scroll directo ──────────
     const rejectionItems = document.querySelectorAll('.rejection-item');
 
-    const strikeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        entry.target.classList.toggle('struck', entry.isIntersecting);
+    function checkStrikes() {
+      const trigger = window.innerHeight * 0.72;
+      rejectionItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const inZone = rect.top < trigger && rect.bottom > 0;
+        item.classList.toggle('struck', inZone);
       });
-    }, {
-      threshold: 0,
-      rootMargin: '0px 0px -38% 0px'
-    });
+    }
 
-    rejectionItems.forEach(item => strikeObserver.observe(item));
+    window.addEventListener('scroll', checkStrikes, { passive: true });
+    window.addEventListener('resize', checkStrikes, { passive: true });
+    checkStrikes();
 
   </script>
 
