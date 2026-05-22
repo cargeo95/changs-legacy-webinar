@@ -515,6 +515,41 @@
       transform: translate(-50%, -50%) scale(0.6);
     }
 
+    /* Indicador "tap para sonido" — solo visible en mobile, sobre el video card */
+    .hero-unmute-hint {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 4;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: rgba(11,28,61,0.78);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.88);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .hero-unmute-hint svg {
+      width: 13px; height: 13px;
+      fill: var(--gold);
+      flex-shrink: 0;
+    }
+    .hero-unmute-hint.vanish {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-6px);
+    }
+
     .btn-primary {
       display: inline-block;
       background: var(--gold);
@@ -1757,13 +1792,48 @@
       .logo-text { font-size: 0.85rem; }
       .nav-cta { font-size: 0.72rem; padding: 8px 14px; }
 
-      /* hero */
-      .hero { padding: 90px 24px 50px; }
-      .hero-container { grid-template-columns: 1fr; gap: 36px; }
-      .hero-media { order: -1; max-width: 300px; width: 100%; margin: 0 auto; }
-      .hero-video-card { aspect-ratio: 4 / 3; }
+      /* hero — video arriba full ancho, texto abajo en azul */
+      .hero {
+        padding: 0;
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+      }
+      .hero-media {
+        position: static;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        order: -1;
+        z-index: 0;
+        display: block;
+      }
+      .hero-media::before { display: none; }
+      .hero-video-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 9 / 14;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .hero-text {
+        position: relative;
+        z-index: 2;
+        padding: 32px 24px 56px;
+        background: var(--navy-deep);
+      }
       .hero-badges { gap: 8px 16px; }
       .hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
+      .hero-unmute-hint { display: flex; }
 
       /* countdown */
       .countdown-timer { gap: 12px; }
@@ -1818,9 +1888,10 @@
       .logo-text { display: none; }
       .nav-cta { font-size: 0.7rem; padding: 8px 12px; }
 
-      /* hero */
-      .hero { padding: 80px 20px 40px; }
-      .hero-media { max-width: 260px; }
+      /* hero — mobile pequeño */
+      .hero { padding: 0; }
+      .hero-media { max-width: 100%; position: static; }
+      .hero-text { padding: 28px 20px 52px; }
       .hero-badges { gap: 6px 12px; }
       .hero-badge { font-size: 0.68rem; }
       .btn-hero { font-size: 0.82rem; padding: 14px 28px; }
@@ -1930,6 +2001,10 @@
           <button class="hero-vid-btn" id="heroVidBtn" aria-label="Reproducir video">
             <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
           </button>
+          <div class="hero-unmute-hint" id="heroUnmuteHint">
+            <svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zm4.07 2.93a8 8 0 0 1 0 11.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            Toca para sonido
+          </div>
         </div>
       </div>
 
@@ -2448,18 +2523,40 @@
     window.addEventListener('resize', checkStrikes, { passive: true });
     checkStrikes();
 
-    // ── Hero video: autoplay + botón fallback ────────
+    // ── Hero video: autoplay + botón fallback + sonido en mobile ─
     const heroVid = document.getElementById('heroVid');
     const heroBtn = document.getElementById('heroVidBtn');
+    const heroUnmuteHint = document.getElementById('heroUnmuteHint');
+    const isMobileView = () => window.innerWidth <= 860 || ('ontouchstart' in window);
+
     if (heroVid && heroBtn) {
       heroVid.addEventListener('play',  () => heroBtn.classList.add('hidden'));
       heroVid.addEventListener('pause', () => heroBtn.classList.remove('hidden'));
 
-      heroBtn.addEventListener('click', () => heroVid.play().catch(() => {}));
+      heroBtn.addEventListener('click', () => {
+        heroVid.muted = false;
+        heroVid.play().catch(() => { heroVid.muted = true; heroVid.play().catch(() => {}); });
+      });
 
       heroVid.play()
         .then(() => heroBtn.classList.add('hidden'))
-        .catch(() => { /* botón visible — usuario puede hacer click */ });
+        .catch(() => { /* botón visible */ });
+
+      // Mobile: unmute al tocar el botón o el video directamente
+      if (isMobileView() && heroUnmuteHint) {
+        const doUnmute = () => {
+          heroVid.muted = false;
+          if (heroVid.paused) heroVid.play().catch(() => { heroVid.muted = true; });
+          heroUnmuteHint.classList.add('vanish');
+          setTimeout(() => { heroUnmuteHint.style.display = 'none'; }, 400);
+          heroVid.removeEventListener('click', doUnmute);
+          heroUnmuteHint.removeEventListener('click', doUnmute);
+        };
+        heroUnmuteHint.addEventListener('click', doUnmute);
+        heroVid.addEventListener('click', doUnmute);
+      } else if (heroUnmuteHint) {
+        heroUnmuteHint.style.display = 'none';
+      }
     }
 
   </script>
