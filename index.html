@@ -1886,7 +1886,8 @@
       <!-- Video card -->
       <div class="hero-media">
         <div class="hero-video-card">
-          <video autoplay muted loop playsinline poster="assets/images/hero.JPG"
+          <video autoplay muted loop playsinline preload="auto"
+                 poster="assets/images/hero.JPG"
                  src="assets/videos/hero-video.mp4"></video>
           <div class="video-card-live">En vivo · 4 Jun</div>
         </div>
@@ -2406,6 +2407,18 @@
     window.addEventListener('scroll', checkStrikes, { passive: true });
     window.addEventListener('resize', checkStrikes, { passive: true });
     checkStrikes();
+
+    // ── Hero video: forzar autoplay en desktop ────────
+    const heroVid = document.querySelector('.hero-video-card video');
+    if (heroVid) {
+      const heroVidObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          heroVid.play().catch(() => {});
+          heroVidObserver.disconnect();
+        }
+      }, { threshold: 0.1 });
+      heroVidObserver.observe(heroVid);
+    }
 
   </script>
 
