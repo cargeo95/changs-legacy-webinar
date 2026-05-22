@@ -478,6 +478,43 @@
       animation: pulse 1.6s infinite;
     }
 
+    .hero-vid-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(201,151,58,0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 0 12px rgba(201,151,58,0.15);
+      transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.2s;
+    }
+
+    .hero-vid-btn:hover {
+      background: var(--gold-light);
+      box-shadow: 0 0 0 16px rgba(201,151,58,0.2);
+    }
+
+    .hero-vid-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--navy-deep);
+      margin-left: 4px;
+    }
+
+    .hero-vid-btn.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.6);
+    }
+
     .btn-primary {
       display: inline-block;
       background: var(--gold);
@@ -1886,10 +1923,13 @@
       <!-- Video card -->
       <div class="hero-media">
         <div class="hero-video-card">
-          <video autoplay muted loop playsinline preload="auto"
+          <video id="heroVid" autoplay muted loop playsinline preload="auto"
                  poster="assets/images/hero.JPG"
                  src="assets/videos/hero-video.mp4"></video>
           <div class="video-card-live">En vivo · 4 Jun</div>
+          <button class="hero-vid-btn" id="heroVidBtn" aria-label="Reproducir video">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
         </div>
       </div>
 
@@ -2408,21 +2448,18 @@
     window.addEventListener('resize', checkStrikes, { passive: true });
     checkStrikes();
 
-    // ── Hero video: autoplay + fallback en primer gesto ──
-    const heroVid = document.querySelector('.hero-video-card video');
-    if (heroVid) {
-      heroVid.play().catch(() => {
-        // Bloqueado por browser — activar en primer gesto del usuario
-        const unlock = () => {
-          heroVid.play().catch(() => {});
-          ['click', 'touchstart', 'keydown', 'scroll'].forEach(ev =>
-            document.removeEventListener(ev, unlock)
-          );
-        };
-        ['click', 'touchstart', 'keydown', 'scroll'].forEach(ev =>
-          document.addEventListener(ev, unlock, { once: true, passive: true })
-        );
-      });
+    // ── Hero video: autoplay + botón fallback ────────
+    const heroVid = document.getElementById('heroVid');
+    const heroBtn = document.getElementById('heroVidBtn');
+    if (heroVid && heroBtn) {
+      heroVid.addEventListener('play',  () => heroBtn.classList.add('hidden'));
+      heroVid.addEventListener('pause', () => heroBtn.classList.remove('hidden'));
+
+      heroBtn.addEventListener('click', () => heroVid.play().catch(() => {}));
+
+      heroVid.play()
+        .then(() => heroBtn.classList.add('hidden'))
+        .catch(() => { /* botón visible — usuario puede hacer click */ });
     }
 
   </script>
