@@ -2408,16 +2408,21 @@
     window.addEventListener('resize', checkStrikes, { passive: true });
     checkStrikes();
 
-    // ── Hero video: forzar autoplay en desktop ────────
+    // ── Hero video: autoplay + fallback en primer gesto ──
     const heroVid = document.querySelector('.hero-video-card video');
     if (heroVid) {
-      const heroVidObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
+      heroVid.play().catch(() => {
+        // Bloqueado por browser — activar en primer gesto del usuario
+        const unlock = () => {
           heroVid.play().catch(() => {});
-          heroVidObserver.disconnect();
-        }
-      }, { threshold: 0.1 });
-      heroVidObserver.observe(heroVid);
+          ['click', 'touchstart', 'keydown', 'scroll'].forEach(ev =>
+            document.removeEventListener(ev, unlock)
+          );
+        };
+        ['click', 'touchstart', 'keydown', 'scroll'].forEach(ev =>
+          document.addEventListener(ev, unlock, { once: true, passive: true })
+        );
+      });
     }
 
   </script>
