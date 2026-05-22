@@ -4,7 +4,7 @@ package-lock.json
 
 # ── Videos grandes (van en GoHighLevel / Vimeo) ───
 # Los testimonios van en el repo (< 15 MB c/u). VSL pesado va en GHL/Vimeo.
-Parte*.mp4
+assets/videos/Parte*.mp4
 *.mov
 *.MOV
 *.webm

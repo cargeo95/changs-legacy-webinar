@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Los 3 Errores que Destrozan tu Crédito en USA — Chang's Legacy</title>
-  <meta name="description" content="Clase gratuita con Barbara Chang: descubre los 3 errores que están bloqueando tu crédito en USA y cómo pararlos desde esta semana. Miércoles 4 de junio, 7PM Atlanta." />
-  <meta name="author" content="Barbara Chang — Chang's Legacy Financial Services" />
+  <meta name="description" content="Clase gratuita con Barbara Chang: descubre los 3 errores que están bloqueando tu crédito en USA y cómo pararlos desde esta semana. Jueves 4 de junio, 7PM Atlanta." />
+  <meta name="author" content="Barbara Chang, Chang's Legacy Financial Services" />
 
   <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:title" content="Los 3 Errores que Destrozan tu Crédito en USA" />
-  <meta property="og:description" content="Clase gratuita con Barbara Chang — Miércoles 4 de junio, 7PM Atlanta. Cupos limitados." />
+  <meta property="og:description" content="Clase gratuita con Barbara Chang. Jueves 4 de junio, 7PM Atlanta. Cupos limitados." />
   <meta property="og:image" content="hero.JPG" />
   <meta property="og:type" content="website" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
@@ -92,23 +92,27 @@
 
     /* ─── NAVBAR ──────────────────────────────────── */
     nav {
-      background: var(--navy-deep);
-      padding: 18px 40px;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 12px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
       z-index: 100;
-      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
-    }
-
-    nav.scrolled {
       background: rgba(11, 28, 61, 0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
-      padding: 12px 40px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    nav.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
     .logo {
@@ -224,77 +228,83 @@
 
     /* ─── HERO ────────────────────────────────────── */
     .hero {
-      position: relative;
       min-height: 100vh;
+      background: var(--navy-deep);
+      background-image:
+        radial-gradient(ellipse 90% 80% at 115% 50%, rgba(26,58,107,0.55) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at -5% 60%, rgba(201,151,58,0.04) 0%, transparent 60%);
+      display: flex;
+      align-items: center;
+      padding: 110px 60px 70px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-container {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .hero-text {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      overflow: hidden;
+      align-items: flex-start;
     }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('hero.JPG');
-      background-size: cover;
-      background-position: center 30%;
-      transform: scale(1.04);
-      transition: transform 8s ease-out;
-    }
-
-    .hero-bg.loaded { transform: scale(1); }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to right, rgba(6,14,31,0.88) 45%, rgba(6,14,31,0.35) 100%),
-        linear-gradient(to top,   rgba(6,14,31,0.7)  0%,  transparent       50%);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 120px 40px 100px;
-      width: 100%;
-    }
-
-    .hero-eyebrow {
+    .hero-live-bar {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(201,151,58,0.15);
-      border: 1px solid rgba(201,151,58,0.5);
-      color: var(--gold-light);
+      gap: 10px;
+      background: rgba(231,76,60,0.12);
+      border: 1px solid rgba(231,76,60,0.35);
+      color: var(--white);
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 7px 16px;
-      border-radius: 2px;
-      margin-bottom: 28px;
+      padding: 9px 18px;
+      border-radius: 6px;
+      margin-bottom: 30px;
     }
 
-    .hero-eyebrow::before {
-      content: '';
-      width: 6px; height: 6px;
+    .hero-live-dot {
+      width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--gold);
+      background: #E74C3C;
       animation: pulse 1.6s infinite;
+      flex-shrink: 0;
+    }
+
+    .hero-live-sep {
+      color: rgba(255,255,255,0.3);
+      font-weight: 400;
+      font-size: 0.8em;
+    }
+
+    .hero-topic-accent {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--gold);
+      letter-spacing: 0.01em;
+      margin-top: -10px;
+      margin-bottom: 24px;
     }
 
     .hero h1 {
-      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
       font-weight: 900;
       color: var(--white);
-      line-height: 1.05;
+      line-height: 1.04;
       text-transform: uppercase;
       letter-spacing: -1px;
-      margin-bottom: 24px;
-      max-width: 700px;
+      margin-bottom: 22px;
     }
 
     .hero h1 em {
@@ -302,48 +312,171 @@
       color: var(--gold);
     }
 
-    .hero h1 .line-accent {
+    .hero h1 .line-small {
       display: block;
-      font-size: 0.55em;
+      font-size: 0.42em;
       font-weight: 700;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.36);
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
     }
 
     .hero-sub {
-      font-size: clamp(1rem, 1.6vw, 1.2rem);
-      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.58);
       font-family: 'Open Sans', sans-serif;
-      line-height: 1.7;
-      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 460px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
       margin-bottom: 44px;
     }
 
-    .event-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 40px;
-    }
-
-    .event-pill {
-      display: flex;
+    .hero-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.14);
-      backdrop-filter: blur(8px);
-      border-radius: 4px;
-      padding: 9px 16px;
-      color: var(--white);
+      gap: 7px;
+      color: rgba(255,255,255,0.62);
       font-family: 'Montserrat', sans-serif;
       font-weight: 600;
-      font-size: 0.82rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      padding: 4px 0 4px 12px;
+      border-left: 2px solid rgba(201,151,58,0.4);
     }
 
-    .event-pill .icon { color: var(--gold); }
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 16px 34px;
+      border-radius: 100px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 8px 32px rgba(201,151,58,0.35);
+    }
+
+    .btn-hero:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 44px rgba(201,151,58,0.5);
+    }
+
+    .btn-hero svg {
+      width: 15px; height: 15px;
+      fill: none; stroke: currentColor; stroke-width: 2.5;
+    }
+
+    .hero-cta-hint {
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.32);
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Video card ── */
+    .hero-media {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-media::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(ellipse at center, rgba(201,151,58,0.16) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-video-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: var(--navy-mid);
+      box-shadow:
+        0 40px 100px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(255,255,255,0.07),
+        0 0 80px rgba(201,151,58,0.1);
+      z-index: 1;
+    }
+
+    .hero-video-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-video-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(11,28,61,0.22) 0%,
+        transparent 35%,
+        rgba(11,28,61,0.4) 100%
+      );
+      pointer-events: none;
+    }
+
+    .video-card-live {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(11,28,61,0.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201,151,58,0.4);
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 13px;
+      border-radius: 100px;
+    }
+
+    .video-card-live::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #E74C3C;
+      animation: pulse 1.6s infinite;
+    }
 
     .btn-primary {
       display: inline-block;
@@ -351,14 +484,14 @@
       color: var(--navy-deep);
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
-      font-size: 1rem;
-      padding: 18px 44px;
+      font-size: 0.9rem;
+      padding: 15px 36px;
       border-radius: 4px;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 8px 40px rgba(201,151,58,0.45);
+      box-shadow: 0 6px 28px rgba(201,151,58,0.4);
     }
 
     .btn-primary:hover {
@@ -374,40 +507,6 @@
       font-family: 'Open Sans', sans-serif;
     }
 
-    .hero-scroll-hint {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      opacity: 0.4;
-      animation: bounce 2.2s infinite;
-    }
-
-    .hero-scroll-hint span {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--white);
-    }
-
-    .hero-scroll-hint svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--white);
-      fill: none;
-      stroke-width: 2;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50%       { transform: translateX(-50%) translateY(6px); }
-    }
 
     /* ─── COUNTDOWN ───────────────────────────────── */
     .countdown-bar {
@@ -466,6 +565,107 @@
       letter-spacing: 0.1em;
     }
 
+    /* ─── LIFESTYLE VISION ───────────────────────── */
+    .vision {
+      background: #FFFFFF;
+      padding: 90px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision-header {
+      text-align: center;
+      padding: 0 40px 56px;
+    }
+
+    .vision-header-pre {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.68rem;
+      color: rgba(0,0,0,0.35);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .vision-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      font-weight: 900;
+      color: var(--navy-deep);
+      text-transform: uppercase;
+      line-height: 1.08;
+    }
+
+    .vision-header h2 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      background: rgba(201,151,58,0.2);
+      gap: 1px;
+      border-top: 1px solid rgba(201,151,58,0.2);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .vision-cell {
+      background: #FFFFFF;
+      padding: 52px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision-cell::before {
+      content: attr(data-num);
+      position: absolute;
+      right: -6px;
+      bottom: -14px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(6rem, 10vw, 9rem);
+      color: rgba(11,28,61,0.1);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .vision-cell-tag {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .vision-cell-tag::before {
+      content: '';
+      width: 22px;
+      height: 2px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .vision-cell-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+      color: var(--navy-deep);
+      text-transform: uppercase;
+      line-height: 1.1;
+      position: relative;
+      z-index: 1;
+    }
+
     /* ─── SECTION TAG (global) ────────────────────── */
     .section-tag {
       display: inline-block;
@@ -482,7 +682,7 @@
 
     /* ─── PAIN SECTION ────────────────────────────── */
     .pain {
-      background: #060E1F;
+      background: #FFFFFF;
       padding: 100px 40px;
       position: relative;
       overflow: hidden;
@@ -492,7 +692,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,151,58,0.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,151,58,0.05) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -508,7 +708,7 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: clamp(0.85rem, 1.2vw, 1rem);
-      color: rgba(255,255,255,0.65);
+      color: rgba(0,0,0,0.45);
       letter-spacing: 0.18em;
       text-transform: uppercase;
       margin-bottom: 64px;
@@ -525,13 +725,13 @@
     .rejection-item {
       position: relative;
       padding: 28px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
       overflow: hidden;
       cursor: default;
     }
 
     .rejection-item:first-child {
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(0,0,0,0.08);
     }
 
     .rejection-item::before {
@@ -549,18 +749,13 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       font-size: clamp(1.4rem, 3.5vw, 2.6rem);
-      color: rgba(255,255,255,0.82);
+      color: rgba(0,0,0,0.85);
       line-height: 1.2;
-      transition: color 0.4s ease;
       display: block;
     }
 
-    .rejection-item:hover .rejection-text {
-      color: rgba(255,255,255,0.95);
-    }
-
     .rejection-item.struck .rejection-text {
-      color: rgba(255,255,255,0.28);
+      color: rgba(0,0,0,0.85);
     }
 
     /* barra roja independiente del texto */
@@ -587,9 +782,9 @@
       right: 0;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(192,57,43,0.25);
-      border: 1px solid rgba(231,76,60,0.6);
-      color: #FF6B6B;
+      background: rgba(192,57,43,0.1);
+      border: 1px solid rgba(192,57,43,0.4);
+      color: #C0392B;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 0.65rem;
@@ -620,7 +815,7 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(201,151,58,0.4), transparent);
+      background: linear-gradient(to right, transparent, rgba(201,151,58,0.55), transparent);
     }
 
     .pain-break-line span {
@@ -632,7 +827,7 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       font-size: clamp(1.54rem, 2.8vw, 2.1rem);
-      color: var(--white);
+      color: var(--navy-deep);
       line-height: 1.45;
       margin-bottom: 20px;
     }
@@ -644,7 +839,7 @@
 
     .pain-sub {
       font-size: 1.4rem;
-      color: rgba(255,255,255,0.68);
+      color: rgba(0,0,0,0.55);
       line-height: 1.75;
     }
 
@@ -869,76 +1064,54 @@
 
     /* ─── ABOUT BARBARA ───────────────────────────── */
     .about {
-      background: var(--gray-light);
-      padding: 90px 40px;
+      position: relative;
+      padding: 110px 40px;
+      overflow: hidden;
+    }
+
+    .about-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/images/hero.JPG') center 30% / cover no-repeat;
+    }
+
+    .about-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(6,14,31,0.93) 0%, rgba(6,14,31,0.75) 55%, rgba(6,14,31,0.55) 100%),
+        linear-gradient(to top,   rgba(6,14,31,0.6)  0%, transparent        50%);
     }
 
     .about-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .about-image {
       position: relative;
-    }
-
-    .about-image img {
-      width: 100%;
-      border-radius: 8px;
-      display: block;
-    }
-
-    .about-image-placeholder {
-      width: 100%;
-      height: 420px;
-      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .about-image-placeholder .ph-icon {
-      font-size: 3.5rem;
-      opacity: 0.25;
-    }
-
-    .about-image-placeholder p {
-      color: rgba(255,255,255,0.25);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
     }
 
     .about-badge {
-      position: absolute;
-      bottom: -16px;
-      right: -16px;
+      display: inline-block;
       background: var(--gold);
       color: var(--navy-deep);
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       font-size: 0.78rem;
-      padding: 12px 18px;
+      padding: 10px 18px;
       border-radius: 6px;
       text-align: center;
       line-height: 1.3;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
     }
 
     .about-content h2 {
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
       font-weight: 900;
-      color: var(--navy-deep);
+      color: var(--white);
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      line-height: 1.1;
     }
 
     .about-content h2 span {
@@ -946,19 +1119,20 @@
     }
 
     .about-content p {
-      font-size: 1rem;
-      color: var(--gray-text);
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.78);
       line-height: 1.8;
       margin-bottom: 16px;
+      max-width: 620px;
     }
 
     .stats-row {
       display: flex;
-      gap: 32px;
+      gap: 40px;
       flex-wrap: wrap;
-      margin-top: 32px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(11,28,61,0.1);
+      margin-top: 40px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,0.15);
     }
 
     .stat {
@@ -970,8 +1144,8 @@
     .stat-number {
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
-      font-size: 1.8rem;
-      color: var(--navy-deep);
+      font-size: 2rem;
+      color: var(--white);
       line-height: 1;
     }
 
@@ -980,8 +1154,8 @@
     }
 
     .stat-label {
-      font-size: 0.8rem;
-      color: var(--gray-text);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
       font-weight: 600;
     }
 
@@ -1547,17 +1721,22 @@
       .nav-cta { font-size: 0.72rem; padding: 8px 14px; }
 
       /* hero */
-      .hero-inner { padding: 100px 24px 80px; }
-      .hero-overlay {
-        background: linear-gradient(to bottom, rgba(6,14,31,0.78) 0%, rgba(6,14,31,0.92) 100%);
-      }
-      .event-info { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .event-pill { font-size: 0.78rem; padding: 8px 14px; }
-      .hero-scroll-hint { display: none; }
+      .hero { padding: 90px 24px 50px; }
+      .hero-container { grid-template-columns: 1fr; gap: 36px; }
+      .hero-media { order: -1; max-width: 300px; width: 100%; margin: 0 auto; }
+      .hero-video-card { aspect-ratio: 4 / 3; }
+      .hero-badges { gap: 8px 16px; }
+      .hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
 
       /* countdown */
       .countdown-timer { gap: 12px; }
       .cd-number { width: 58px; height: 58px; font-size: 1.6rem; }
+
+      /* vision */
+      .vision { padding: 56px 0 0; }
+      .vision-header { padding: 0 20px 36px; }
+      .vision-grid { grid-template-columns: 1fr; }
+      .vision-cell { padding: 32px 20px; }
 
       /* pain */
       .pain { padding: 60px 20px; }
@@ -1576,11 +1755,8 @@
       .learn-cta { padding: 56px 20px; }
 
       /* about */
-      .about { padding: 60px 20px; }
-      .about-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-      .about-image { max-width: 280px; margin: 0 auto; }
-      .about-badge { right: 0; bottom: -12px; font-size: 0.7rem; padding: 10px 14px; }
-      .stats-row { justify-content: center; }
+      .about { padding: 70px 24px; }
+      .stats-row { gap: 24px; }
 
       /* registro */
       .registro-inner { grid-template-columns: 1fr; padding: 60px 20px; gap: 36px; }
@@ -1606,7 +1782,11 @@
       .nav-cta { font-size: 0.7rem; padding: 8px 12px; }
 
       /* hero */
-      .hero-inner { padding: 80px 20px 60px; }
+      .hero { padding: 80px 20px 40px; }
+      .hero-media { max-width: 260px; }
+      .hero-badges { gap: 6px 12px; }
+      .hero-badge { font-size: 0.68rem; }
+      .btn-hero { font-size: 0.82rem; padding: 14px 28px; }
       .btn-primary { padding: 16px 28px; font-size: 0.9rem; }
 
       /* countdown */
@@ -1657,7 +1837,7 @@
   <!-- NAV -->
   <nav>
     <div class="logo">
-      <img src="logo.png" alt="Chang's Legacy" class="logo-badge" />
+      <img src="assets/images/logo.png" alt="Chang's Legacy" class="logo-badge" />
       <div class="logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
     </div>
     <a href="#registro" class="nav-cta">Reservar mi lugar</a>
@@ -1665,33 +1845,53 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg" id="heroBg"></div>
-    <div class="hero-overlay"></div>
+    <div class="hero-container">
 
-    <div class="hero-inner">
-      <h1>
-        <span class="line-accent">Así se ve cuando</span>
-        Tu Crédito<br><em>Cambia</em><br>Tu Vida.
-      </h1>
+      <!-- Texto -->
+      <div class="hero-text">
+        <div class="hero-live-bar">
+          <span class="hero-live-dot"></span>
+          Clase en vivo
+          <span class="hero-live-sep">·</span>
+          Jueves 4 de junio · 7PM Atlanta
+        </div>
 
-      <p class="hero-sub">
-        Una clase gratuita donde te revelo los 3 errores que están bloqueando tu futuro financiero —
-        y cómo pararlos desde esta semana, sin importar cómo está tu crédito hoy.
-      </p>
+        <h1>
+          Los 3 Errores que<br>Destrozan tu<br><em>Crédito en USA</em>
+        </h1>
+        <p class="hero-topic-accent">y cómo pararlos desde esta semana</p>
 
-      <div class="event-info">
-        <div class="event-pill"><span class="icon">📅</span> Miércoles 4 de Junio</div>
-        <div class="event-pill"><span class="icon">🕖</span> 7PM Atlanta (EDT)</div>
-        <div class="event-pill"><span class="icon">💻</span> En vivo por Zoom</div>
-        <div class="event-pill"><span class="icon">✅</span> 100% Gratuito</div>
+        <p class="hero-sub">
+          Una clase gratuita con Barbara Chang donde descubres exactamente
+          qué está bloqueando tu historial — y qué hacer al respecto,
+          sin importar cómo está tu crédito hoy.
+        </p>
+
+        <div class="hero-badges">
+          <span class="hero-badge">📅 Jueves 4 de Junio</span>
+          <span class="hero-badge">🕖 7PM Atlanta (EDT)</span>
+          <span class="hero-badge">💻 En vivo por Zoom</span>
+          <span class="hero-badge">✅ 100% Gratuito</span>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#registro" class="btn-hero">
+            Quiero mi lugar gratis
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <span class="hero-cta-hint">Sin costo · Sin tarjeta · Cupos limitados</span>
+        </div>
       </div>
 
-      <a href="#registro" class="btn-primary">Quiero mi lugar gratis</a>
-    </div>
+      <!-- Video card -->
+      <div class="hero-media">
+        <div class="hero-video-card">
+          <video autoplay muted loop playsinline poster="assets/images/hero.JPG"
+                 src="assets/videos/hero-video.mp4"></video>
+          <div class="video-card-live">En vivo · 4 Jun</div>
+        </div>
+      </div>
 
-    <div class="hero-scroll-hint">
-      <span>Sigue leyendo</span>
-      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </section>
 
@@ -1719,6 +1919,35 @@
   </div>
 
   <hr class="gold-divider" />
+
+  <!-- LIFESTYLE VISION -->
+  <section class="vision">
+
+    <div class="vision-header reveal">
+      <p class="vision-header-pre">Así se ve cuando</p>
+      <h2>Tu Crédito <em>Cambia Tu Vida</em></h2>
+    </div>
+
+    <div class="vision-grid">
+      <div class="vision-cell reveal-scale" data-num="01">
+        <p class="vision-cell-tag">Vivienda</p>
+        <p class="vision-cell-text">Puedes comprar<br>tu casa</p>
+      </div>
+      <div class="vision-cell reveal-scale reveal-delay-1" data-num="02">
+        <p class="vision-cell-tag">Negocio</p>
+        <p class="vision-cell-text">Te aprueban créditos<br>para tu negocio</p>
+      </div>
+      <div class="vision-cell reveal-scale reveal-delay-2" data-num="03">
+        <p class="vision-cell-tag">Auto</p>
+        <p class="vision-cell-text">Estrenas tu<br>primer carro</p>
+      </div>
+      <div class="vision-cell reveal-scale reveal-delay-3" data-num="04">
+        <p class="vision-cell-tag">Viajes</p>
+        <p class="vision-cell-text">Viajas con los beneficios<br>de tus tarjetas de crédito</p>
+      </div>
+    </div>
+
+  </section>
 
   <!-- PAIN -->
   <section class="pain">
@@ -1771,7 +2000,7 @@
     <div class="learn-intro reveal">
       <span class="section-tag">En esta clase gratuita</span>
       <h2>Te Voy a Revelar<br><em>Los 3 Errores Exactos</em></h2>
-      <p>Errores que están bloqueando el futuro financiero de miles de familias latinas hoy mismo — y que se pueden eliminar completamente cuando alguien te los señala.</p>
+      <p>Errores que están bloqueando el futuro financiero de miles de familias latinas hoy mismo. Se pueden eliminar completamente cuando alguien te los señala.</p>
     </div>
 
     <div class="learn-split">
@@ -1779,7 +2008,7 @@
       <!-- FOTO STICKY -->
       <div class="learn-photo-col">
         <div class="learn-photo-wrap">
-          <img src="IMG_5203%203.JPG" alt="Barbara Chang" />
+          <img src="assets/images/barbara.JPG" alt="Barbara Chang" />
         </div>
         <div class="learn-photo-quote">
           <p>"Nadie nace sabiendo cómo funciona el sistema crediticio americano. Pero una vez que lo entiendes, <em>todo cambia.</em>"</p>
@@ -1796,7 +2025,7 @@
             <span class="error-strip-icon">💳</span>
             <div class="error-strip-tag">Error 01</div>
             <h3>El Error de Uso que<br>Destruye tu Score</h3>
-            <p>Lo que haces con tu crédito disponible tiene más impacto del que imaginas. La mayoría lo hace mal sin saberlo — y cada mes que pasa, el daño se acumula.</p>
+            <p>Lo que haces con tu crédito disponible tiene más impacto del que imaginas. La mayoría lo hace mal sin saberlo, y cada mes que pasa el daño se acumula.</p>
           </div>
         </div>
 
@@ -1816,7 +2045,7 @@
             <span class="error-strip-icon">⏱️</span>
             <div class="error-strip-tag">Error 03</div>
             <h3>El Tiempo que<br>Pierdes sin Actuar</h3>
-            <p>Cada mes sin una estrategia clara es un mes que el sistema trabaja en tu contra. El momento de actuar no es "cuando esté listo" — es ahora.</p>
+            <p>Cada mes sin una estrategia clara es un mes que el sistema trabaja en tu contra. El momento de actuar no es "cuando esté listo". Es ahora.</p>
           </div>
         </div>
 
@@ -1835,19 +2064,15 @@
 
   <!-- ABOUT -->
   <section class="about">
-    <div class="about-inner">
-      <div class="about-image reveal-left">
-        <!-- Reemplaza con: <img src="barbara-about.jpg" alt="Barbara Chang" /> -->
-        <div class="about-image-placeholder">
-          <span class="ph-icon">👤</span>
-          <p>Foto de Barbara</p>
-        </div>
-        <div class="about-badge">FCRA &amp; CROA<br>Certified Expert</div>
-      </div>
+    <div class="about-bg"></div>
+    <div class="about-overlay"></div>
 
-      <div class="about-content reveal-right">
+    <div class="about-inner reveal">
+      <div class="about-badge">FCRA &amp; CROA · Certified Expert</div>
+
+      <div class="about-content">
         <span class="section-tag">Quién te va a enseñar</span>
-        <h2>Soy <span>Barbara Chang</span> —<br>Y ya crucé al otro lado.</h2>
+        <h2>Soy <span>Barbara Chang</span><br>y ya crucé al otro lado.</h2>
         <p>
           Fundadora de Chang's Legacy Financial Services, especialista certificada en reparación
           y construcción de crédito bajo las leyes federales FCRA y CROA.
@@ -1858,7 +2083,7 @@
           hipotecas, carros, negocios propios.
         </p>
         <p>
-          No es teoría. Es el mismo camino que yo recorrí — y que mis clientes recorren
+          No es teoría. Es el mismo camino que yo recorrí, y que mis clientes recorren
           con resultados reales en 90 días.
         </p>
 
@@ -1885,7 +2110,7 @@
     <div class="video-grid">
 
       <div class="video-card">
-        <video id="vid1" src="testimonio/Testimonio 1.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
+        <video id="vid1" src="assets/videos/testimonio/Testimonio%201.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
         <div class="video-info">
@@ -1896,7 +2121,7 @@
       </div>
 
       <div class="video-card">
-        <video id="vid2" src="testimonio/Testimonio 2.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
+        <video id="vid2" src="assets/videos/testimonio/Testimonio%202.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
         <div class="video-info">
@@ -1907,7 +2132,7 @@
       </div>
 
       <div class="video-card">
-        <video id="vid3" src="testimonio/Testimonio 3.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
+        <video id="vid3" src="assets/videos/testimonio/Testimonio%203.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
         <div class="video-info">
@@ -1918,7 +2143,7 @@
       </div>
 
       <div class="video-card">
-        <video id="vid4" src="testimonio/WhatsApp Video 2026-03-24 at 7.59.26 PM.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
+        <video id="vid4" src="assets/videos/testimonio/WhatsApp%20Video%202026-03-24%20at%207.59.26%20PM.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
         <div class="video-overlay"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
         <div class="video-info">
@@ -1945,8 +2170,8 @@
         </p>
         <div class="registro-trust">
           <div class="registro-trust-item">100% gratuito, sin compromisos</div>
-          <div class="registro-trust-item">Miércoles 4 de junio · 7PM Atlanta (EDT)</div>
-          <div class="registro-trust-item">Clase en vivo por Zoom — con preguntas en directo</div>
+          <div class="registro-trust-item">Jueves 4 de junio · 7PM Atlanta (EDT)</div>
+          <div class="registro-trust-item">Clase en vivo por Zoom, con preguntas en directo</div>
           <div class="registro-trust-item">Cupos limitados</div>
         </div>
       </div>
@@ -1999,7 +2224,7 @@
 
       <div class="footer-brand">
         <div class="logo">
-          <img src="logo.png" alt="Chang's Legacy" class="logo-badge" />
+          <img src="assets/images/logo.png" alt="Chang's Legacy" class="logo-badge" />
           <div class="logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
         </div>
         <p>
@@ -2087,20 +2312,18 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // ── Hero bg zoom-in on load ────────────────────
-    window.addEventListener('load', () => {
-      document.getElementById('heroBg').classList.add('loaded');
-    });
 
-    // ── Sticky nav ─────────────────────────────────
+    // ── Nav: oculta en hero, visible desde el countdown ──
     const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+    const heroSection = document.querySelector('.hero');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      nav.classList.toggle('visible', !entries[0].isIntersecting);
+    }, { threshold: 0.1 });
+    navObserver.observe(heroSection);
 
     // ── Floating CTA ───────────────────────────────
     const floatingCta = document.getElementById('floatingCta');
-    const heroSection  = document.querySelector('.hero');
 
     const ctaObserver = new IntersectionObserver((entries) => {
       floatingCta.classList.toggle('show', !entries[0].isIntersecting);

@@ -55,16 +55,16 @@ FOOTER         → logo, disclaimer legal, redes sociales
 
 | Archivo | Uso |
 |---|---|
-| `hero.JPG` | Fondo hero — foto grupal evento, familias celebrando |
-| `IMG_5203 3.JPG` | Foto de Barbara — sección "learn" sticky izquierda |
-| `logo.png` | Logo oficial Chang's Legacy — árbol CL navy+dorado |
-| `favicon.svg` | Favicon generado del logo |
-| `testimonio/Testimonio 1.mp4` | Video testimonio card 1 |
-| `testimonio/Testimonio 2.mp4` | Video testimonio card 2 |
-| `testimonio/Testimonio 3.mp4` | Video testimonio card 3 |
-| `testimonio/WhatsApp Video...mp4` | Video testimonio card 4 |
-| `Parte 1.mp4` | VSL principal Barbara (para `vsl.html`) |
-| `Parte 2 .mp4` | VSL principal Barbara parte 2 |
+| `assets/images/hero.JPG` | Fondo hero — foto grupal evento, familias celebrando |
+| `assets/images/barbara.JPG` | Foto de Barbara — sección "learn" sticky izquierda |
+| `assets/images/logo.png` | Logo oficial Chang's Legacy — árbol CL navy+dorado |
+| `favicon.svg` | Favicon generado del logo (raíz para compatibilidad de navegadores) |
+| `assets/videos/testimonio/Testimonio 1.mp4` | Video testimonio card 1 |
+| `assets/videos/testimonio/Testimonio 2.mp4` | Video testimonio card 2 |
+| `assets/videos/testimonio/Testimonio 3.mp4` | Video testimonio card 3 |
+| `assets/videos/testimonio/WhatsApp Video...mp4` | Video testimonio card 4 |
+| `assets/videos/Parte 1.mp4` | VSL principal Barbara (para `vsl.html`) |
+| `assets/videos/Parte 2.mp4` | VSL principal Barbara parte 2 |
 
 > **Nota:** Los videos (.mp4) están en `.gitignore`. Para producción se suben a GoHighLevel o Vimeo y se embeden via `<iframe>` o GHL video element.
 
