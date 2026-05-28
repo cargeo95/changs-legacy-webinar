@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crédito Nuevo en 90 Días — Clase con Barbara Chang · 21 de junio</title>
+  <meta name="description" content="Clase en vivo con Barbara Chang: aprende a reparar tu crédito de forma legal. Domingo 21 de junio, presencial Miami + Zoom. $147 USD." />
+  <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1b5a1d97a92fe9673e.png" />
+  <link rel="apple-touch-icon" href="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1b5a1d97a92fe9673e.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <style>
+    /* ─── RESET & BASE ─────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #0B1C3D;
+      --navy2:  #112952;
+      --navy3:  #1A3A6B;
+      --gold:   #C9973A;
+      --gold2:  #E8B84B;
+      --white:  #FFFFFF;
+      --red:    #E74C3C;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: var(--white); background: var(--navy); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; line-height: 1.05; }
+
+    .ghl-breakout {
+      width: 100vw !important;
+      position: relative !important;
+      left: 50% !important;
+      margin-left: -50vw !important;
+      max-width: 100vw !important;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────── */
+    .reveal { opacity:0; transform:translateY(40px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-left { opacity:0; transform:translateX(-50px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal-left.visible { opacity:1; transform:translateX(0); }
+    .reveal-right { opacity:0; transform:translateX(50px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal-right.visible { opacity:1; transform:translateX(0); }
+    .reveal-scale { opacity:0; transform:scale(.7); transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+    .reveal-scale.visible { opacity:1; transform:scale(1); }
+    .d1 { transition-delay:.1s; } .d2 { transition-delay:.2s; } .d3 { transition-delay:.3s; } .d4 { transition-delay:.4s; }
+
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:.5} }
+    @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    @keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+    @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* ─── NAV ─────────────────────────── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:300;
+      padding: 14px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(11,28,61,0); backdrop-filter: blur(0px);
+      transition: background .4s, backdrop-filter .4s, padding .3s, box-shadow .4s;
+    }
+    nav.scrolled {
+      background: rgba(11,28,61,.97);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 30px rgba(0,0,0,.5);
+      padding: 10px 48px;
+    }
+    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-logo img { width:38px; height:38px; object-fit:contain; background:#fff; border-radius:6px; padding:3px; }
+    .nav-logo-text { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.85rem; color:#fff; line-height:1.25; }
+    .nav-logo-text span { color:var(--gold); }
+    .nav-actions { display:flex; align-items:center; gap:10px; }
+    .nav-phone { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.65); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.73rem; text-decoration:none; padding:8px 14px; border-radius:100px; border:1px solid rgba(255,255,255,.1); transition:color .2s,border-color .2s; }
+    .nav-phone:hover { color:#fff; border-color:rgba(255,255,255,.3); }
+    .nav-wa { display:flex; align-items:center; gap:7px; background:rgba(37,211,102,.15); border:1px solid rgba(37,211,102,.35); color:#25D366; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.73rem; padding:8px 14px; border-radius:100px; text-decoration:none; transition:background .2s; }
+    .nav-wa:hover { background:rgba(37,211,102,.28); }
+    .nav-cta { background:var(--gold); color:var(--navy); font-family:'Montserrat',sans-serif; font-weight:800; font-size:.73rem; padding:10px 22px; border-radius:4px; text-decoration:none; text-transform:uppercase; letter-spacing:.06em; transition:background .2s,transform .15s; }
+    .nav-cta:hover { background:var(--gold2); transform:translateY(-1px); }
+    @media(max-width:860px){ nav{padding:12px 20px;} nav.scrolled{padding:10px 20px;} .nav-phone,.nav-wa{display:none;} }
+
+    /* ─── FLOATING CTA ─────────────────────────── */
+    .float-cta { position:fixed; bottom:24px; right:24px; z-index:500; opacity:0; transform:translateY(20px); pointer-events:none; transition:opacity .35s,transform .35s; }
+    .float-cta.show { opacity:1; transform:translateY(0); pointer-events:auto; }
+    .float-cta a { display:flex; align-items:center; gap:10px; background:var(--gold); color:var(--navy); font-family:'Montserrat',sans-serif; font-weight:800; font-size:.8rem; padding:15px 24px; border-radius:100px; text-decoration:none; text-transform:uppercase; letter-spacing:.05em; box-shadow:0 10px 40px rgba(201,151,58,.55); transition:background .2s,transform .15s; white-space:nowrap; }
+    .float-cta a:hover { background:var(--gold2); transform:translateY(-2px); }
+    .float-dot { width:8px; height:8px; background:var(--navy); border-radius:50%; animation:pulse 1.6s infinite; flex-shrink:0; }
+    @media(max-width:860px){ .float-cta{bottom:12px;right:12px;left:12px;} .float-cta a{justify-content:center;border-radius:10px;width:100%;} }
+
+    /* ─── HERO ─────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset:0;
+      background: url('https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1afe2210f89e478c26.jpg') center top/cover no-repeat;
+      transform: scale(1.06);
+      animation: heroBgZoom 8s ease forwards;
+    }
+    @keyframes heroBgZoom { from{transform:scale(1.06)} to{transform:scale(1)} }
+    .hero-overlay {
+      position: absolute; inset:0;
+      background:
+        linear-gradient(to top, rgba(11,28,61,1) 0%, rgba(11,28,61,.7) 40%, rgba(11,28,61,.3) 70%, rgba(11,28,61,.15) 100%),
+        linear-gradient(160deg, rgba(11,28,61,.4) 0%, transparent 50%);
+    }
+    .hero-content {
+      position: relative; z-index:2;
+      width:100%; max-width:1100px;
+      padding: 0 48px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items:center; gap:10px;
+      background: rgba(201,151,58,.12); border:1px solid rgba(201,151,58,.4);
+      color:var(--gold2); font-family:'Montserrat',sans-serif; font-weight:700;
+      font-size:.68rem; letter-spacing:.18em; text-transform:uppercase;
+      padding:9px 20px; border-radius:100px; margin-bottom:32px;
+    }
+    .hero-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); animation:pulse 1.6s infinite; }
+    .hero h1 {
+      font-size: clamp(2.2rem,5vw,4.6rem);
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: -1.5px;
+      line-height: 1.02;
+      margin-bottom: 24px;
+      text-shadow: 0 4px 40px rgba(0,0,0,.4);
+    }
+    .hero h1 em { font-style:normal; color:var(--gold); }
+    .hero-sub {
+      font-size: clamp(.95rem,1.3vw,1.1rem);
+      color: rgba(255,255,255,.72);
+      line-height: 1.75;
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:44px; }
+    .hero-pill { display:inline-flex; align-items:center; gap:8px; color:rgba(255,255,255,.8); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.75rem; padding:8px 18px; border-radius:100px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.07); backdrop-filter:blur(8px); }
+    .hero-ctas { display:flex; flex-direction:column; align-items:center; gap:12px; }
+    .btn-gold { display:inline-flex; align-items:center; gap:10px; background:var(--gold); color:var(--navy); font-family:'Montserrat',sans-serif; font-weight:900; font-size:1rem; padding:20px 44px; border-radius:100px; text-decoration:none; text-transform:uppercase; letter-spacing:.07em; box-shadow:0 10px 40px rgba(201,151,58,.45); transition:background .2s,transform .15s,box-shadow .2s; }
+    .btn-gold:hover { background:var(--gold2); transform:translateY(-3px); box-shadow:0 18px 50px rgba(201,151,58,.6); }
+    .btn-gold svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2.5; }
+    .hero-hint { font-size:.72rem; color:rgba(255,255,255,.35); letter-spacing:.03em; }
+    @media(max-width:860px){ .hero-content{padding:0 24px;} .hero h1{letter-spacing:-1px;} }
+    @media(max-width:480px){ .hero{padding-bottom:60px;} .hero-pills{flex-direction:column;align-items:center;} }
+
+    /* ─── TICKER ─────────────────────────── */
+    .ticker { background:#060E20; border-top:1px solid rgba(201,151,58,.18); border-bottom:1px solid rgba(201,151,58,.18); overflow:hidden; }
+    .ticker-track { display:flex; gap:20px; padding:14px 20px; width:max-content; animation:ticker 36s linear infinite; }
+    .ticker-item { display:inline-flex; align-items:center; gap:10px; padding:8px 18px; border-radius:100px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.07); color:rgba(255,255,255,.7); font-family:'Montserrat',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.04em; white-space:nowrap; }
+    .ticker-item strong { color:var(--gold2); }
+
+    /* ─── VSL ─────────────────────────── */
+    .vsl { background:#060E20; padding:100px 40px; }
+    .vsl-inner { max-width:940px; margin:0 auto; }
+    .vsl-label { text-align:center; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.7rem; color:var(--gold); letter-spacing:.22em; text-transform:uppercase; margin-bottom:14px; }
+    .vsl-title { text-align:center; font-size:clamp(1.6rem,3vw,2.6rem); font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:48px; line-height:1.1; }
+    .vsl-title em { font-style:normal; color:var(--gold); }
+    .vsl-frame {
+      position:relative;
+      border-radius:20px; overflow:hidden;
+      border:1px solid rgba(201,151,58,.35);
+      box-shadow:0 40px 100px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.04), 0 0 120px rgba(201,151,58,.1);
+    }
+    .vsl-ratio { position:relative; padding-top:56.25%; background:var(--navy2); }
+    .vsl-ratio iframe, .vsl-ratio video { position:absolute; inset:0; width:100%; height:100%; border:none; }
+    .vsl-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; cursor:pointer; background:linear-gradient(135deg,#0B1C3D,#1A3A6B); }
+    .vsl-play { width:90px; height:90px; border-radius:50%; background:var(--gold); display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 20px rgba(201,151,58,.15),0 0 0 40px rgba(201,151,58,.07); animation:floatY 3s ease-in-out infinite; transition:transform .2s; }
+    .vsl-play:hover { transform:scale(1.1); }
+    .vsl-play svg { width:32px; height:32px; fill:var(--navy); margin-left:6px; }
+    .vsl-play-text { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.95rem; color:rgba(255,255,255,.65); letter-spacing:.04em; }
+    .vsl-caption { text-align:center; margin-top:20px; font-size:.82rem; color:rgba(255,255,255,.35); font-style:italic; }
+    .vsl-unlock { display:flex; align-items:center; justify-content:center; gap:12px; margin-top:20px; padding:16px 24px; background:rgba(201,151,58,.08); border:1px solid rgba(201,151,58,.2); border-radius:10px; }
+    .vsl-unlock p { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.82rem; color:rgba(255,255,255,.6); }
+    .vsl-unlock.unlocked { background:rgba(37,160,80,.1); border-color:rgba(37,160,80,.4); }
+    .vsl-unlock.unlocked p { color:#4ade80; }
+    @media(max-width:480px){ .vsl{padding:70px 20px;} }
+
+    /* ─── STATS ─────────────────────────── */
+    .stats { background:var(--navy); padding:70px 40px; border-top:3px solid var(--gold); }
+    .stats-inner { max-width:1100px; margin:0 auto; }
+    .stats-header { text-align:center; margin-bottom:64px; }
+    .stats-header h2 { font-size:clamp(1.4rem,2.5vw,2rem); font-weight:900; color:#fff; text-transform:uppercase; line-height:1.15; }
+    .stats-header h2 em { font-style:normal; color:var(--gold); }
+    .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; }
+    .stat-box { padding:44px 28px; text-align:center; background:rgba(255,255,255,.03); border-right:1px solid rgba(255,255,255,.08); transition:background .3s; }
+    .stat-box:last-child { border-right:none; }
+    .stat-box:hover { background:rgba(201,151,58,.06); }
+    .stat-num { font-family:'Montserrat',sans-serif; font-weight:900; font-size:clamp(2rem,3vw,3rem); color:#fff; line-height:1; margin-bottom:10px; }
+    .stat-num em { font-style:normal; color:var(--gold); }
+    .stat-desc { font-size:.82rem; color:rgba(255,255,255,.45); line-height:1.55; }
+    @media(max-width:860px){ .stats-grid{grid-template-columns:repeat(2,1fr);} .stat-box{border-bottom:1px solid rgba(255,255,255,.08);} }
+    @media(max-width:480px){ .stats-grid{grid-template-columns:1fr;} .stat-box{border-right:none;} }
+
+    /* ─── PAIN ─────────────────────────── */
+    .pain { background:#F5F6F8; padding:80px 40px; }
+    .pain-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .pain-text .eyebrow { display:inline-block; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); border-bottom:2px solid var(--gold); padding-bottom:4px; margin-bottom:24px; }
+    .pain-text h2 { font-size:clamp(2rem,3.5vw,3.2rem); font-weight:900; color:var(--navy); text-transform:uppercase; margin-bottom:20px; line-height:1.06; }
+    .pain-text h2 em { font-style:normal; color:var(--gold); }
+    .pain-text > p { font-size:1.05rem; color:#444; line-height:1.8; margin-bottom:16px; }
+    .pain-items { margin-top:32px; display:flex; flex-direction:column; gap:16px; }
+    .pain-item { display:flex; gap:16px; align-items:flex-start; padding:18px 20px; background:#fff; border-left:4px solid var(--gold); border-radius:0 10px 10px 0; box-shadow:0 4px 20px rgba(11,28,61,.06); }
+    .pain-icon { font-size:1.4rem; flex-shrink:0; line-height:1; margin-top:2px; }
+    .pain-item p { font-size:.9rem; color:#333; line-height:1.65; margin:0; }
+    .pain-close { margin-top:36px; padding-top:32px; border-top:1px solid rgba(0,0,0,.08); font-family:'Montserrat',sans-serif; font-weight:800; font-size:clamp(1.1rem,2vw,1.4rem); color:var(--navy); line-height:1.4; }
+    .pain-close em { font-style:normal; color:var(--gold); }
+    .pain-visual { position:relative; }
+    .pain-img-wrap { border-radius:20px; overflow:hidden; aspect-ratio:3/4; box-shadow:0 30px 80px rgba(11,28,61,.2); }
+    .pain-img-wrap img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+    .pain-badge { position:absolute; bottom:-20px; left:-20px; background:var(--navy); border:1px solid rgba(201,151,58,.5); border-radius:14px; padding:18px 22px; box-shadow:0 10px 40px rgba(0,0,0,.25); }
+    .pain-badge .pb-num { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2rem; color:var(--gold); line-height:1; }
+    .pain-badge .pb-lbl { font-size:.72rem; color:rgba(255,255,255,.65); margin-top:4px; }
+    @media(max-width:860px){ .pain{padding:80px 24px;} .pain-inner{grid-template-columns:1fr;gap:48px;} .pain-img-wrap{max-width:380px;margin:0 auto;} .pain-badge{bottom:12px;left:12px;} }
+    @media(max-width:480px){ .pain{padding:60px 20px;} .pain-text h2{font-size:1.8rem;} .pain-item{padding:14px 16px;} }
+
+    /* ─── TURNING + EVENT ─────────────────────────── */
+    .turning {
+      position:relative; overflow:hidden;
+      padding:90px 40px;
+    }
+    .turning-bg { position:absolute; inset:0; background:url('https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1afe2210f89e478c26.jpg') center/cover no-repeat; filter:saturate(.4); }
+    .turning-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(6,10,24,.97) 0%,rgba(11,28,61,.93) 100%); }
+    .turning-inner { position:relative; z-index:1; max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 480px; gap:64px; align-items:center; }
+    .turning-text { }
+    .turning-eyebrow { display:inline-block; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold2); margin-bottom:20px; }
+    .turning h2 {
+      font-size: clamp(2.2rem,4.5vw,4rem);
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+    .turning h2 em { font-style:normal; color:var(--gold); display:block; }
+    .turning p { font-size:1rem; color:rgba(255,255,255,.6); line-height:1.8; margin-bottom:14px; max-width:480px; }
+    .turning-cta { margin-top:36px; }
+    @media(max-width:900px){ .turning-inner{grid-template-columns:1fr;gap:40px;} .turning{padding:70px 24px;} .turning h2{letter-spacing:-1px;} }
+
+    /* ─── EVENT CARD (dentro de turning) ─────────────────────────── */
+    .event-card {
+      display:grid; grid-template-columns:140px 1fr;
+      border:1px solid rgba(201,151,58,.4);
+      border-radius:18px; overflow:hidden;
+      box-shadow:0 24px 60px rgba(0,0,0,.6);
+    }
+    /* Panel izquierdo — fecha */
+    .event-date-panel {
+      background: var(--gold);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      padding:40px 24px;
+      text-align:center;
+      position:relative;
+    }
+    .event-date-panel::after { content:''; position:absolute; top:0; right:0; bottom:0; width:1px; background:rgba(11,28,61,.2); }
+    .ed-label { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(11,28,61,.6); margin-bottom:8px; }
+    .ed-day { font-family:'Montserrat',sans-serif; font-weight:900; font-size:clamp(4.5rem,8vw,7rem); color:var(--navy); line-height:.85; }
+    .ed-month { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.3rem; color:var(--navy); text-transform:uppercase; letter-spacing:.12em; margin-top:8px; }
+    .ed-year { font-family:'Montserrat',sans-serif; font-weight:600; font-size:.75rem; color:rgba(11,28,61,.55); letter-spacing:.1em; margin-top:4px; }
+    .ed-badge { margin-top:20px; background:var(--navy); color:var(--gold); font-family:'Montserrat',sans-serif; font-weight:800; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:100px; }
+    /* Panel derecho — detalles */
+    .event-details-panel {
+      background:linear-gradient(135deg,rgba(11,28,61,.98),rgba(17,41,82,.95));
+      padding:36px 40px;
+      display:flex; flex-direction:column; justify-content:space-between; gap:24px;
+    }
+    .event-rows { display:flex; flex-direction:column; gap:14px; }
+    .event-row { display:flex; align-items:center; gap:14px; padding:14px 16px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:10px; }
+    .event-row-icon { font-size:1.3rem; flex-shrink:0; width:28px; text-align:center; }
+    .event-row-text strong { display:block; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.78rem; color:#fff; text-transform:uppercase; letter-spacing:.04em; margin-bottom:2px; }
+    .event-row-text span { font-size:.78rem; color:rgba(255,255,255,.5); }
+    .event-bottom { display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; padding-top:20px; border-top:1px solid rgba(255,255,255,.08); }
+    .event-price { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2rem; color:var(--gold); line-height:1; }
+    .event-price small { font-size:.78rem; color:rgba(255,255,255,.35); font-weight:400; display:block; margin-top:3px; }
+    .event-urgency { font-family:'Montserrat',sans-serif; font-weight:600; font-size:.72rem; color:#FF6B6B; background:rgba(231,76,60,.1); border:1px solid rgba(231,76,60,.25); border-radius:6px; padding:8px 14px; line-height:1.5; }
+    @media(max-width:700px){
+      .event-card{grid-template-columns:1fr;}
+      .event-date-panel{padding:28px 24px; flex-direction:row; gap:20px; justify-content:flex-start; align-items:center;}
+      .event-date-panel::after{top:auto;right:0;left:0;bottom:0;width:auto;height:1px;}
+      .ed-label{display:none;}
+      .event-details-panel{padding:24px 20px;}
+      .event-bottom{flex-direction:column;align-items:flex-start;gap:14px;}
+      .event-bottom > div{align-items:flex-start !important; width:100%;}
+      .event-urgency{width:100%;}
+      .event-bottom .btn-gold{width:100%;justify-content:center;}
+    }
+    @media(max-width:480px){ .event{padding:60px 20px;} .ed-day{font-size:3rem;} .ed-month{font-size:1rem;} }
+
+    /* ─── VALUE ─────────────────────────── */
+    .value { background:#fff; padding:80px 40px; }
+    .value-inner { max-width:1100px; margin:0 auto; }
+    .value-header { text-align:center; margin-bottom:72px; }
+    .value-header .eyebrow { display:inline-block; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); border-bottom:2px solid var(--gold); padding-bottom:4px; margin-bottom:18px; }
+    .value-header h2 { font-size:clamp(1.8rem,3vw,2.8rem); font-weight:900; color:var(--navy); text-transform:uppercase; margin-bottom:14px; }
+    .value-header h2 em { font-style:normal; color:var(--gold); }
+    .value-header p { font-size:1rem; color:#666; max-width:560px; margin:0 auto; line-height:1.75; }
+    .value-blocks { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:72px; }
+    .value-block { padding:36px 24px; background:#F5F6F8; border-radius:14px; border-bottom:3px solid transparent; transition:border-color .3s,transform .3s,box-shadow .3s; }
+    .value-block:hover { border-color:var(--gold); transform:translateY(-5px); box-shadow:0 16px 50px rgba(11,28,61,.1); }
+    .value-icon { font-size:2.4rem; margin-bottom:18px; }
+    .value-block h3 { font-family:'Montserrat',sans-serif; font-weight:800; font-size:.9rem; color:var(--navy); text-transform:uppercase; margin-bottom:10px; line-height:1.3; }
+    .value-block p { font-size:.85rem; color:#555; line-height:1.65; }
+    .value-lists { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+    .value-list h3 { font-family:'Montserrat',sans-serif; font-weight:800; font-size:.95rem; color:var(--navy); text-transform:uppercase; margin-bottom:22px; padding-bottom:14px; border-bottom:2px solid rgba(201,151,58,.3); }
+    .value-list ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
+    .value-list li { display:flex; align-items:flex-start; gap:12px; font-size:.9rem; color:#444; line-height:1.55; }
+    .value-list li::before { content:'→'; color:var(--gold); font-weight:700; flex-shrink:0; }
+    .value-cta { text-align:center; margin-top:60px; }
+    @media(max-width:860px){ .value-blocks{grid-template-columns:repeat(2,1fr);} .value-lists{grid-template-columns:1fr;gap:36px;} .value-header{margin-bottom:48px;} }
+    @media(max-width:480px){ .value-blocks{grid-template-columns:1fr;} .value{padding:60px 20px;} .value-header{margin-bottom:36px;} }
+
+    /* ─── TICKETS ─────────────────────────── */
+    .tickets { background:var(--navy); padding:80px 40px; position:relative; overflow:hidden; }
+    .tickets::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(201,151,58,.07) 0%,transparent 70%); pointer-events:none; }
+    .tickets-inner { max-width:900px; margin:0 auto; position:relative; z-index:1; }
+    .tickets-header { text-align:center; margin-bottom:60px; }
+    .tickets-header .eyebrow { display:inline-block; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold2); margin-bottom:16px; }
+    .tickets-header h2 { font-size:clamp(1.8rem,3vw,2.8rem); font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:10px; }
+    .tickets-header h2 em { font-style:normal; color:var(--gold); }
+    .tickets-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch; }
+    .ticket { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:22px; padding:28px 28px; position:relative; overflow:hidden; transition:transform .3s,box-shadow .3s,border-color .3s; display:flex; flex-direction:column; }
+    .ticket:hover { transform:translateY(-4px); box-shadow:0 24px 60px rgba(0,0,0,.4); border-color:rgba(201,151,58,.3); }
+    .ticket .t-tag { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.62rem; color:rgba(255,255,255,.4); text-transform:uppercase; letter-spacing:.15em; margin-bottom:8px; }
+    .ticket .t-name { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.1rem; color:#fff; text-transform:uppercase; margin-bottom:4px; }
+    .ticket .t-date { font-size:.75rem; color:rgba(255,255,255,.45); margin-bottom:16px; }
+    .ticket .t-price { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2.4rem; color:#fff; line-height:1; margin-bottom:4px; }
+    .ticket .t-price small { font-size:.85rem; color:rgba(255,255,255,.4); }
+    .ticket .t-desc { font-size:.8rem; color:rgba(255,255,255,.5); margin-bottom:16px; line-height:1.5; }
+    .ticket-features { list-style:none; display:flex; flex-direction:column; gap:7px; margin-bottom:20px; flex:1; }
+    .ticket-features li { display:flex; align-items:flex-start; gap:10px; font-size:.8rem; color:rgba(255,255,255,.75); line-height:1.45; }
+    .ticket-features li::before { content:'✓'; width:17px; height:17px; min-width:17px; background:rgba(201,151,58,.18); border:1px solid rgba(201,151,58,.45); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.55rem; color:var(--gold); flex-shrink:0; margin-top:1px; }
+    .btn-outline { display:flex; align-items:center; justify-content:center; gap:10px; border:2px solid var(--gold); color:var(--gold); font-family:'Montserrat',sans-serif; font-weight:700; font-size:.8rem; padding:13px 24px; border-radius:100px; text-decoration:none; text-transform:uppercase; letter-spacing:.06em; transition:background .2s,color .2s; width:100%; }
+    .btn-outline:hover { background:var(--gold); color:var(--navy); }
+    .ticket.featured { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); }
+    .ticket-note { padding:10px 14px; background:rgba(201,151,58,.1); border:1px solid rgba(201,151,58,.3); border-radius:8px; font-size:.73rem; color:var(--gold2); line-height:1.5; text-align:center; margin-bottom:16px; }
+    @media(max-width:700px){ .tickets{padding:80px 20px;} .tickets-grid{grid-template-columns:1fr;} }
+
+    /* ─── ABOUT ─────────────────────────── */
+    .about { position:relative; padding:90px 40px; overflow:hidden; }
+    .about-bg { position:absolute; inset:0; background:url('https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1afe2210f89e478c26.jpg') center 30%/cover no-repeat; filter:saturate(.4); }
+    .about-overlay { position:absolute; inset:0; background:linear-gradient(to right,rgba(6,10,24,.98) 0%,rgba(11,28,61,.88) 55%,rgba(11,28,61,.5) 100%),linear-gradient(to top,rgba(6,10,24,.7) 0%,transparent 50%); }
+    .about-inner { position:relative; z-index:1; max-width:700px; }
+    .about-badges { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:30px; }
+    .badge { font-family:'Montserrat',sans-serif; font-weight:800; font-size:.68rem; padding:7px 16px; border-radius:4px; text-transform:uppercase; letter-spacing:.05em; }
+    .badge-gold { background:var(--gold); color:var(--navy); }
+    .badge-outline { background:transparent; border:1px solid rgba(201,151,58,.55); color:var(--gold); }
+    .about h2 { font-size:clamp(2rem,4vw,3.5rem); font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:28px; line-height:1; }
+    .about h2 span { color:var(--gold); display:block; }
+    .about p { font-size:1.05rem; color:rgba(255,255,255,.75); line-height:1.8; margin-bottom:16px; max-width:580px; }
+    .about-stats { display:flex; gap:40px; flex-wrap:wrap; margin-top:44px; padding-top:40px; border-top:1px solid rgba(255,255,255,.1); }
+    .about-stat .num { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2.4rem; color:#fff; line-height:1; }
+    .about-stat .num span { color:var(--gold); }
+    .about-stat .lbl { font-size:.78rem; color:rgba(255,255,255,.45); margin-top:5px; line-height:1.4; }
+    @media(max-width:860px){ .about{padding:90px 24px;} .about-stats{gap:28px;} }
+
+    /* ─── TESTIMONIALS ─────────────────────────── */
+    .testimonials { background:#060E20; padding:80px 40px; }
+    .testimonials-header { text-align:center; margin-bottom:44px; }
+    .testimonials-header .eyebrow { display:inline-block; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold2); margin-bottom:14px; }
+    .testimonials-header h2 { font-size:clamp(1.5rem,2.5vw,2.2rem); font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:8px; }
+    .testimonials-header h2 em { font-style:normal; color:var(--gold); }
+    .testimonials-header p { font-size:.82rem; color:rgba(255,255,255,.35); }
+    .video-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; max-width:1100px; margin:0 auto; }
+    .video-card {
+      position:relative; aspect-ratio:9/16; overflow:hidden; cursor:pointer;
+      background:var(--navy2); border-radius:12px;
+      border:1px solid rgba(255,255,255,.07);
+      transition:border-color .3s, transform .3s;
+    }
+    .video-card:hover { border-color:rgba(201,151,58,.4); transform:scale(1.02); }
+    .video-card video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .vc-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(6,10,24,.95) 0%,rgba(6,10,24,.15) 55%,transparent 100%); z-index:1; transition:opacity .3s; }
+    .video-card.playing .vc-overlay { opacity:.25; }
+    .vc-play {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:52px; height:52px; border-radius:50%;
+      background:rgba(255,255,255,.15); backdrop-filter:blur(8px);
+      border:2px solid rgba(255,255,255,.4);
+      display:flex; align-items:center; justify-content:center;
+      z-index:2; transition:opacity .25s, background .2s, border-color .2s;
+      pointer-events:none;
+    }
+    .vc-play svg { width:18px; height:18px; fill:#fff; margin-left:3px; }
+    .video-card:hover .vc-play { background:var(--gold); border-color:var(--gold); }
+    .video-card:hover .vc-play svg { fill:var(--navy); }
+    .video-card.playing .vc-play { opacity:0; }
+    .vc-info { position:absolute; bottom:0; left:0; right:0; padding:18px 14px; z-index:3; }
+    .vc-stars { color:var(--gold); font-size:.65rem; letter-spacing:2px; margin-bottom:6px; }
+    .vc-quote { font-size:.75rem; color:rgba(255,255,255,.88); line-height:1.5; font-style:italic; margin-bottom:8px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; transition:opacity .3s; }
+    .video-card.playing .vc-quote { opacity:0; }
+    .vc-author { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.75rem; color:#fff; }
+    .vc-author span { display:block; font-weight:400; font-size:.65rem; color:rgba(255,255,255,.4); margin-top:2px; }
+    @media(max-width:860px){ .video-grid{grid-template-columns:repeat(2,1fr);} .testimonials{padding:60px 20px;} }
+
+    /* ─── URGENCY ─────────────────────────── */
+    .urgency { background:var(--navy2); padding:90px 40px; text-align:center; position:relative; overflow:hidden; }
+    .urgency::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(201,151,58,.07) 0%,transparent 70%); }
+    .urgency-inner { position:relative; z-index:1; max-width:760px; margin:0 auto; }
+    .urgency h2 { font-size:clamp(2rem,4.5vw,4rem); font-weight:900; color:#fff; text-transform:uppercase; letter-spacing:-2px; margin-bottom:24px; line-height:.95; }
+    .urgency h2 em { font-style:normal; color:var(--gold); }
+    .urgency p { font-size:1.1rem; color:rgba(255,255,255,.6); line-height:1.8; max-width:580px; margin:0 auto 16px; }
+    /* Countdown embedded in urgency */
+    .cd-bar { padding:36px 0 44px; }
+    .cd-lbl { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.72rem; color:var(--gold); letter-spacing:.2em; text-transform:uppercase; margin-bottom:18px; }
+    .cd-timer { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+    .cd-unit { display:flex; flex-direction:column; align-items:center; gap:6px; }
+    .cd-num { background:rgba(255,255,255,.06); border:1px solid rgba(201,151,58,.3); border-radius:10px; width:80px; height:80px; display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif; font-weight:900; font-size:2.2rem; color:#fff; }
+    .cd-unit-lbl { font-family:'Montserrat',sans-serif; font-weight:600; font-size:.6rem; color:rgba(255,255,255,.35); text-transform:uppercase; letter-spacing:.12em; }
+    @media(max-width:480px){ .cd-num{width:62px;height:62px;font-size:1.6rem;} .urgency{padding:90px 24px;} .urgency h2{letter-spacing:-1px;} }
+
+    /* ─── FORM ─────────────────────────── */
+    .registro { background:var(--navy); padding:80px 40px; position:relative; overflow:hidden; }
+    .registro::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(201,151,58,.07) 0%,transparent 70%); pointer-events:none; }
+    .registro-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 480px; gap:80px; align-items:center; position:relative; z-index:1; }
+    .reg-copy h2 { font-size:clamp(1.8rem,3.5vw,3rem); font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:24px; line-height:1.05; }
+    .reg-copy h2 em { font-style:normal; color:var(--gold); }
+    .reg-copy p { font-size:1rem; color:rgba(255,255,255,.65); line-height:1.8; margin-bottom:28px; }
+    .reg-trust { display:flex; flex-direction:column; gap:12px; }
+    .rt-item { display:flex; align-items:center; gap:12px; font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; color:rgba(255,255,255,.8); }
+    .rt-item::before { content:'✓'; width:22px; height:22px; background:rgba(201,151,58,.18); border:1px solid rgba(201,151,58,.5); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.62rem; color:var(--gold); flex-shrink:0; }
+    .form-card { background:rgba(255,255,255,.06); border:1px solid rgba(201,151,58,.35); border-radius:18px; padding:44px 40px; backdrop-filter:blur(10px); }
+    .form-card h3 { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.05rem; color:#fff; text-align:center; margin-bottom:6px; text-transform:uppercase; }
+    .form-card .form-sub { text-align:center; font-size:.82rem; color:rgba(255,255,255,.45); margin-bottom:28px; }
+    .form-group { margin-bottom:14px; }
+    .form-group label { display:block; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.65); margin-bottom:7px; }
+    .form-group input, .form-group select { width:100%; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:8px; padding:14px 16px; font-family:'Open Sans',sans-serif; font-size:.92rem; color:#fff; outline:none; transition:border-color .2s,background .2s; }
+    .form-group input::placeholder { color:rgba(255,255,255,.35); }
+    .form-group input:focus, .form-group select:focus { border-color:var(--gold); background:rgba(201,151,58,.07); }
+    .form-group select { color:rgba(255,255,255,.65); }
+    .form-group select option { background:#112952; }
+    .btn-form { width:100%; background:var(--gold); color:var(--navy); font-family:'Montserrat',sans-serif; font-weight:900; font-size:.98rem; padding:18px; border:none; border-radius:100px; cursor:pointer; text-transform:uppercase; letter-spacing:.06em; margin-top:8px; transition:background .2s,transform .15s; box-shadow:0 10px 36px rgba(201,151,58,.35); }
+    .btn-form:hover { background:var(--gold2); transform:translateY(-2px); }
+    .form-disclaimer { text-align:center; font-size:.7rem; color:rgba(255,255,255,.3); margin-top:14px; line-height:1.6; }
+    @media(max-width:860px){ .registro{padding:80px 24px;} .registro-inner{grid-template-columns:1fr;gap:40px;} .form-card{padding:32px 24px;} }
+
+    /* ─── FAQ ─────────────────────────── */
+    .faq { background:#F5F6F8; padding:100px 40px; }
+    .faq-inner { max-width:760px; margin:0 auto; }
+    .faq-header { text-align:center; margin-bottom:52px; }
+    .faq-header h2 { font-size:clamp(1.6rem,2.8vw,2.4rem); font-weight:900; color:var(--navy); text-transform:uppercase; margin-bottom:10px; }
+    .faq-header h2 em { font-style:normal; color:var(--gold); }
+    .faq-item { border-bottom:1px solid rgba(0,0,0,.08); }
+    .faq-q { width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 0; background:none; border:none; cursor:pointer; text-align:left; }
+    .faq-q-text { font-family:'Montserrat',sans-serif; font-weight:700; font-size:1rem; color:var(--navy); line-height:1.4; }
+    .faq-icon { width:30px; height:30px; border-radius:50%; background:rgba(201,151,58,.1); border:1px solid rgba(201,151,58,.35); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background .2s,transform .3s; }
+    .faq-icon svg { width:12px; height:12px; fill:none; stroke:var(--gold); stroke-width:2.5; transition:transform .3s; }
+    .faq-item.open .faq-icon { background:var(--gold); }
+    .faq-item.open .faq-icon svg { stroke:var(--navy); transform:rotate(45deg); }
+    .faq-a { display:none; padding:0 0 22px; font-size:.92rem; color:#555; line-height:1.8; }
+    .faq-item.open .faq-a { display:block; }
+    @media(max-width:480px){ .faq{padding:70px 20px;} }
+
+    /* ─── FOOTER ─────────────────────────── */
+    footer { background:#020810; border-top:1px solid rgba(255,255,255,.06); }
+    .footer-main { max-width:1100px; margin:0 auto; padding:56px 40px 40px; display:grid; grid-template-columns:1fr auto; gap:60px; align-items:start; }
+    .footer-logo { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+    .footer-logo img { width:40px; height:40px; object-fit:contain; background:#fff; border-radius:7px; padding:3px; }
+    .footer-logo-text { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.9rem; color:#fff; line-height:1.25; }
+    .footer-logo-text span { color:var(--gold); }
+    .footer-brand p { font-size:.78rem; color:rgba(255,255,255,.35); line-height:1.75; max-width:420px; margin-bottom:22px; }
+    .footer-social { display:flex; gap:10px; }
+    .footer-social a { width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.45); text-decoration:none; transition:background .2s,border-color .2s,color .2s; }
+    .footer-social a:hover { background:rgba(201,151,58,.15); border-color:var(--gold); color:var(--gold); }
+    .footer-links { display:flex; flex-direction:column; gap:12px; padding-top:4px; }
+    .footer-links a { font-family:'Montserrat',sans-serif; font-weight:600; font-size:.76rem; color:rgba(255,255,255,.45); text-decoration:none; transition:color .2s; }
+    .footer-links a:hover { color:var(--gold); }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.05); padding:18px 40px; max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+    .footer-bottom p { font-size:.7rem; color:rgba(255,255,255,.25); line-height:1.65; }
+    .footer-bottom .copy { font-family:'Montserrat',sans-serif; font-weight:600; color:rgba(255,255,255,.35); font-size:.72rem; white-space:nowrap; }
+    @media(max-width:860px){ .footer-main{grid-template-columns:1fr;gap:32px;padding:36px 20px 28px;} .footer-bottom{padding:14px 20px;flex-direction:column;text-align:center;} }
+
+    /* ─── DIVIDER ─────────────────────────── */
+    .divider { height:3px; background:linear-gradient(90deg,transparent,var(--gold),transparent); border:none; margin:0; }
+  </style>
+</head>
+<body>
+<div class="ghl-breakout">
+
+  <!-- FLOATING CTA -->
+  <div class="float-cta" id="floatCta">
+    <a href="#registro">
+      <span class="float-dot"></span>
+      Reservar mi cupo — $147 USD
+    </a>
+  </div>
+
+  <!-- ══ NAV ══ -->
+  <nav id="mainNav">
+    <a href="#inicio" class="nav-logo">
+      <img src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1b5a1d97a92fe9673e.png" alt="Chang's Legacy" />
+      <div class="nav-logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
+    </a>
+    <div class="nav-actions">
+      <a href="https://wa.me/?text=Hola+Barbara%2C+vi+la+clase+del+21+de+junio+y+quiero+m%C3%A1s+informaci%C3%B3n" target="_blank" class="nav-wa">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="#registro" class="nav-cta">Reservar — $147</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        Chang's Legacy &nbsp;·&nbsp; Clase en vivo — 21 de junio
+      </div>
+      <h1>Tu crédito dañado<br>te está costando<br><em>más de lo que crees.</em></h1>
+      <p class="hero-sub">En esta clase en vivo aprenderás exactamente cómo reparar tu crédito de forma legal — y cómo convertirlo en la llave que abre la casa, el carro y el negocio que llevas años esperando.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">📍 Presencial Miami + Zoom</span>
+        <span class="hero-pill">🗓 Domingo 21 de junio</span>
+        <span class="hero-pill">🎟 Cupos limitados</span>
+        <span class="hero-pill">💲 $147 USD</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#registro" class="btn-gold">
+          Reserva tu cupo — $147 USD — 21 de junio
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <span class="hero-hint">Pago único · Sin mensualidades · Confirmación inmediata</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TICKER ══ -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <div class="ticker-item"><strong>Método:</strong> claridad + estrategia + ejecución</div>
+      <div class="ticker-item"><strong>Formato:</strong> presencial Miami + Zoom en vivo</div>
+      <div class="ticker-item"><strong>Enfoque:</strong> crédito personal y visión empresarial</div>
+      <div class="ticker-item"><strong>Base legal:</strong> FCRA y CROA</div>
+      <div class="ticker-item"><strong>Comunidad:</strong> familias latinas en USA</div>
+      <div class="ticker-item"><strong>Resultados:</strong> 200+ casos acompañados</div>
+      <div class="ticker-item"><strong>Método:</strong> claridad + estrategia + ejecución</div>
+      <div class="ticker-item"><strong>Formato:</strong> presencial Miami + Zoom en vivo</div>
+      <div class="ticker-item"><strong>Enfoque:</strong> crédito personal y visión empresarial</div>
+      <div class="ticker-item"><strong>Base legal:</strong> FCRA y CROA</div>
+      <div class="ticker-item"><strong>Comunidad:</strong> familias latinas en USA</div>
+      <div class="ticker-item"><strong>Resultados:</strong> 200+ casos acompañados</div>
+    </div>
+  </div>
+
+  <!-- ══ CONEXIÓN 4 JUNIO ══ -->
+  <div style="background:#0B1C3D;border-top:1px solid rgba(201,151,58,.2);border-bottom:1px solid rgba(201,151,58,.2);padding:18px 40px;">
+    <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <p style="font-family:'Montserrat',sans-serif;font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.5;margin:0;">
+        <strong style="color:#C9973A;">¿Asististe al webinar gratuito del 4 de junio?</strong><br>
+        Ya sabes qué está roto. Esta clase es el cómo — el sistema completo para arreglarlo.
+      </p>
+      <a href="index.html" style="flex-shrink:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;color:#C9973A;text-decoration:none;border:1px solid rgba(201,151,58,.4);padding:8px 18px;border-radius:100px;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='rgba(201,151,58,.1)'" onmouseout="this.style.background='transparent'">
+        ← Ver webinar gratuito
+      </a>
+    </div>
+  </div>
+
+  <!-- ══ VSL ══ -->
+  <section class="vsl" id="video">
+    <div class="vsl-inner">
+      <div class="vsl-label reveal">Mira el video antes de registrarte</div>
+      <h2 class="vsl-title reveal">Barbara te explica exactamente<br><em>qué vas a lograr el 21 de junio</em></h2>
+      <div class="vsl-frame reveal">
+        <div class="vsl-ratio">
+          <!-- PROGRAMADOR: Reemplazar con iframe de PandaVideo o Vimeo -->
+          <div class="vsl-placeholder" id="vslPlaceholder" onclick="unlockForm()">
+            <div class="vsl-play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <div class="vsl-play-text">Haz clic para reproducir el video de Barbara</div>
+          </div>
+        </div>
+      </div>
+      <div class="vsl-unlock" id="vslUnlock" style="display:none;">
+        <p id="vslUnlockText">✓ Video visto · Formulario desbloqueado</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS ══ -->
+  <section class="stats" id="credibilidad">
+    <div class="stats-inner">
+      <div class="stats-header reveal">
+        <h2>Más de <em>200 familias latinas</em><br>ya transformaron su crédito con Barbara Chang</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box reveal d1">
+          <div class="stat-num">$<em>50K</em></div>
+          <div class="stat-desc">promedio ahorrado por cliente al saldar deudas estratégicamente</div>
+        </div>
+        <div class="stat-box reveal d2">
+          <div class="stat-num"><em>90</em>–<em>120</em></div>
+          <div class="stat-desc">días promedio para ver resultados reales y concretos</div>
+        </div>
+        <div class="stat-box reveal d3">
+          <div class="stat-num"><em>200</em>+</div>
+          <div class="stat-desc">familias hispanas atendidas desde 2020 en toda USA</div>
+        </div>
+        <div class="stat-box reveal d4">
+          <div class="stat-num">$<em>22K</em></div>
+          <div class="stat-desc">en deuda eliminada de un solo reporte crediticio en un caso real</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ══ PAIN ══ -->
+  <section class="pain" id="contexto">
+    <div class="pain-inner">
+      <div class="pain-text reveal-left">
+        <span class="eyebrow">El sistema que nadie te explicó</span>
+        <h2>El sistema de crédito en USA<br>no fue diseñado<br><em>pensando en ti.</em></h2>
+        <p>Trabajas duro. Ahorras. Haces todo bien. Pero cuando vas al banco… te dicen que no calificas.</p>
+        <p>No es falta de esfuerzo. Es que nadie te enseñó las reglas del juego financiero en Estados Unidos — y eso tiene un costo enorme.</p>
+        <div class="pain-items">
+          <div class="pain-item">
+            <span class="pain-icon">🏠</span>
+            <p>Con score menor a 620 puedes pagar <strong>hasta $180,000 más</strong> en intereses por la misma casa.</p>
+          </div>
+          <div class="pain-item">
+            <span class="pain-icon">🚗</span>
+            <p>El mismo carro puede costarte <strong>$150 más al mes</strong> con mal crédito.</p>
+          </div>
+          <div class="pain-item">
+            <span class="pain-icon">📋</span>
+            <p>La FTC encontró <strong>errores en 1 de cada 4 reportes</strong> — puede que el tuyo sea uno de ellos.</p>
+          </div>
+          <div class="pain-item">
+            <span class="pain-icon">💼</span>
+            <p>Sin crédito empresarial, <strong>tu negocio no puede crecer</strong> aunque tengas la idea y las ganas.</p>
+          </div>
+        </div>
+        <div class="pain-close">
+          El problema no es que no trabajes.<br>
+          El problema es que te falta <em>la llave que nadie te enseñó a conseguir.</em>
+        </div>
+      </div>
+      <div class="pain-visual reveal-right">
+        <div class="pain-img-wrap">
+          <img src="assets/images/barbara.JPG" alt="Barbara Chang" />
+        </div>
+        <div class="pain-badge">
+          <div class="pb-num">FCRA</div>
+          <div class="pb-lbl">Especialista certificada<br>CROA Compliance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TURNING + EVENT ══ -->
+  <section class="turning" id="evento">
+    <div class="turning-bg"></div>
+    <div class="turning-overlay"></div>
+    <div class="turning-inner">
+      <!-- Texto izquierda -->
+      <div class="turning-text">
+        <div class="turning-eyebrow reveal">El giro</div>
+        <h2 class="reveal">Aquí es donde<br><em>todo cambia.</em></h2>
+        <p class="reveal d1">No estás estancado. Estás sin la estrategia correcta.</p>
+        <p class="reveal d2">Reparar tu crédito no es magia. Es un proceso legal, paso a paso, con el método correcto — y eso es exactamente lo que Barbara te va a enseñar el 21 de junio.</p>
+        <div class="turning-cta reveal d3">
+          <a href="#registro" class="btn-gold" style="font-size:.88rem;padding:15px 32px;">Quiero mi cupo en la clase
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- Event card derecha -->
+      <div class="event-card reveal-right">
+        <div class="event-date-panel">
+          <div class="ed-label">Fecha</div>
+          <div class="ed-day">21</div>
+          <div class="ed-month">Junio</div>
+          <div class="ed-year">2026</div>
+          <div class="ed-badge">Domingo</div>
+        </div>
+        <div class="event-details-panel">
+          <div class="event-rows">
+            <div class="event-row">
+              <span class="event-row-icon">📍</span>
+              <div class="event-row-text">
+                <strong>Formato híbrido</strong>
+                <span>Presencial Miami + Zoom para USA</span>
+              </div>
+            </div>
+            <div class="event-row">
+              <span class="event-row-icon">⏰</span>
+              <div class="event-row-text">
+                <strong>Horario</strong>
+                <span>Tarde · [hora a confirmar]</span>
+              </div>
+            </div>
+            <div class="event-row">
+              <span class="event-row-icon">🎟</span>
+              <div class="event-row-text">
+                <strong>Cupos</strong>
+                <span>50–100 · Se cierran al llenarse</span>
+              </div>
+            </div>
+          </div>
+          <div class="event-bottom">
+            <div class="event-price">$147 USD<small>pago único · sin mensualidades</small></div>
+            <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+              <div class="event-urgency">⚠️ Plan completo en 24h — solo la diferencia</div>
+              <a href="#registro" class="btn-gold" style="font-size:.76rem;padding:11px 22px;white-space:nowrap;">Reservar ahora
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ══ VALUE ══ -->
+  <section class="value" id="aprende">
+    <div class="value-inner">
+      <div class="value-header reveal">
+        <span class="eyebrow">Una clase práctica, no una promesa vacía</span>
+        <h2>Lo que vas a <em>aprender</em><br>el 21 de junio</h2>
+        <p>Barbara no te va a hablar de teoría. Te muestra exactamente cómo ella y su equipo han logrado resultados reales con familias como la tuya.</p>
+      </div>
+      <div class="value-blocks">
+        <div class="value-block reveal d1">
+          <div class="value-icon">📄</div>
+          <h3>Lee tu reporte como experto</h3>
+          <p>Entiende qué dicen Experian, Equifax y TransUnion sin confusión ni intermediarios.</p>
+        </div>
+        <div class="value-block reveal d2">
+          <div class="value-icon">⚖️</div>
+          <h3>Disputas legales bajo FCRA</h3>
+          <p>Aprende qué se puede disputar y bajo qué ley — estrategia real, no plantillas genéricas.</p>
+        </div>
+        <div class="value-block reveal d3">
+          <div class="value-icon">📈</div>
+          <h3>Construye historial positivo</h3>
+          <p>Sube el score y mantenlo — al mismo tiempo que eliminas lo negativo.</p>
+        </div>
+        <div class="value-block reveal d4">
+          <div class="value-icon">🗝</div>
+          <h3>Convierte el crédito en tu llave</h3>
+          <p>Casa, carro, negocio. El crédito bien usado abre puertas que el esfuerzo solo no puede.</p>
+        </div>
+      </div>
+      <div class="value-lists">
+        <div class="value-list reveal-left">
+          <h3>En la clase aprenderás a:</h3>
+          <ul>
+            <li>Leer tu reporte de crédito como un experto</li>
+            <li>Identificar errores que te están bloqueando</li>
+            <li>Entender qué se puede disputar y bajo qué ley</li>
+            <li>Tomar decisiones financieras con confianza</li>
+            <li>Dar el primer paso del Sistema Crédito Nuevo en 90 Días</li>
+          </ul>
+        </div>
+        <div class="value-list reveal-right">
+          <h3>Al salir tendrás:</h3>
+          <ul>
+            <li>Claridad total sobre tu situación crediticia real</li>
+            <li>Un plan de acción concreto para empezar</li>
+            <li>Confianza para decisiones que antes parecían imposibles</li>
+            <li>Acceso a la comunidad de Chang's Legacy</li>
+            <li>Q&A en vivo con Barbara para tus preguntas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="value-cta reveal">
+        <a href="#registro" class="btn-gold" style="color:var(--navy);">Quiero aprender esto el 21 de junio
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TICKETS ══ -->
+  <section class="tickets" id="tickets">
+    <div class="tickets-inner">
+      <div class="tickets-header reveal">
+        <div class="eyebrow">Elige cómo quieres entrar</div>
+        <h2>Dos formas de<br><em>transformar tu crédito</em></h2>
+      </div>
+      <div class="tickets-grid">
+        <!-- Ticket base -->
+        <div class="ticket reveal-left">
+          <div class="t-tag">Opción 1</div>
+          <div class="t-name">Clase en vivo</div>
+          <div class="t-date">Domingo 21 de junio · Miami + Zoom</div>
+          <div class="t-price">$147 <small>USD</small></div>
+          <div class="t-desc">La entrada al conocimiento. Ideal si quieres empezar con el primer paso.</div>
+          <ul class="ticket-features">
+            <li>Acceso en vivo a la clase con Barbara</li>
+            <li>Aprende a leer tu reporte de las 3 burós</li>
+            <li>Estrategias legales bajo FCRA para disputas</li>
+            <li>Q&A en vivo con Barbara</li>
+            <li>Replay disponible por tiempo limitado</li>
+          </ul>
+          <a href="#registro" class="btn-outline">Quiero la clase</a>
+        </div>
+        <!-- Ticket featured -->
+        <div class="ticket featured reveal-right">
+          <div class="t-tag">Opción 2</div>
+          <div class="t-name">Plan DIY Personalizado</div>
+          <div class="t-date">Crédito Nuevo en 90 Días</div>
+          <div class="t-price">$697 <small>USD · pago único</small></div>
+          <div class="t-desc">La experiencia completa para quien quiere resultados reales, no solo conocimiento.</div>
+          <ul class="ticket-features">
+            <li>Todo lo de la Clase en vivo</li>
+            <li>Auditoría completa de tu reporte (3 burós)</li>
+            <li>Plan de acción personalizado con estrategia de disputas</li>
+            <li>Acceso al Sistema Crédito Nuevo en 90 Días</li>
+            <li>Material educativo: guías, plantillas y recursos</li>
+            <li>Comunidad privada de WhatsApp</li>
+            <li>Sesión de mentoría si hay acreedores activos</li>
+          </ul>
+          <div class="ticket-note">⭐ Si compras en las primeras 24h después de la clase, solo pagas la diferencia — $550 USD.</div>
+          <a href="#registro" class="btn-gold" style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:.8rem;padding:13px 24px;">Quiero el plan completo
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section class="about" id="barbara">
+    <div class="about-bg"></div>
+    <div class="about-overlay"></div>
+    <div class="about-inner">
+      <div class="about-badges reveal">
+        <span class="badge badge-gold">FCRA Certified</span>
+        <span class="badge badge-outline">CROA Compliance</span>
+        <span class="badge badge-outline">200+ familias</span>
+      </div>
+      <h2 class="reveal">Conoce a<br><span>Barbara Chang</span></h2>
+      <p class="reveal d1">Barbara Chang es fundadora de Chang's Legacy Financial Services y autora de los libros <em>LEGADO</em> y <em>LEGADO PROFESIONAL</em>.</p>
+      <p class="reveal d2">Desde 2020 ha ayudado a más de 200 familias hispanas en Estados Unidos a entender, proteger y mejorar su crédito de forma legal, ética y estratégica.</p>
+      <p class="reveal d3">No viene a venderte un milagro. Su sistema trabaja bajo la ley FCRA y la CROA — y te enseña a usar el crédito para que esto no te vuelva a pasar.</p>
+      <div class="about-stats reveal">
+        <div class="about-stat"><div class="num">200<span>+</span></div><div class="lbl">familias atendidas</div></div>
+        <div class="about-stat"><div class="num">6<span>+</span></div><div class="lbl">años de experiencia</div></div>
+        <div class="about-stat"><div class="num">90<span>d</span></div><div class="lbl">sistema de resultados</div></div>
+        <div class="about-stat"><div class="num"><span>FCRA</span></div><div class="lbl">certificada y CROA</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="testimonials" id="testimonios">
+    <div class="testimonials-header reveal">
+      <div class="eyebrow">Resultados reales</div>
+      <h2>Lo que dicen quienes<br>ya trabajaron con <em>Barbara</em></h2>
+      <p>Toca para reproducir con sonido</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card reveal d1" onclick="toggleVideo(this)">
+        <video loop playsinline preload="metadata"
+               src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df17df1cb25b062589bf.mp4"></video>
+        <div class="vc-overlay"></div>
+        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="vc-info">
+          <div class="vc-stars">★★★★★</div>
+          <div class="vc-quote">"Tenía el crédito destruido. En 3 meses con Barbara califiqué para mi primer apartamento sola."</div>
+          <div class="vc-author">María L.<span>Atlanta, Georgia</span></div>
+        </div>
+      </div>
+      <div class="video-card reveal d2" onclick="toggleVideo(this)">
+        <video loop playsinline preload="metadata"
+               src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df18e0a73267018d008d.mp4"></video>
+        <div class="vc-overlay"></div>
+        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="vc-info">
+          <div class="vc-stars">★★★★★</div>
+          <div class="vc-quote">"Me rechazaron 2 veces para un carro. En 90 días me aprobaron con una tasa que no esperaba."</div>
+          <div class="vc-author">Elianet G.<span>Miami, Florida</span></div>
+        </div>
+      </div>
+      <div class="video-card reveal d3" onclick="toggleVideo(this)">
+        <video loop playsinline preload="metadata"
+               src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df185a1d97a92fe96709.mp4"></video>
+        <div class="vc-overlay"></div>
+        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="vc-info">
+          <div class="vc-stars">★★★★★</div>
+          <div class="vc-quote">"Por fin alguien que me explicó en español cómo funciona. Mi score subió 87 puntos en dos meses."</div>
+          <div class="vc-author">Sandra<span>USA</span></div>
+        </div>
+      </div>
+      <div class="video-card reveal d4" onclick="toggleVideo(this)">
+        <video loop playsinline preload="metadata"
+               src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df175a1d97a92fe966fb.mp4"></video>
+        <div class="vc-overlay"></div>
+        <div class="vc-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="vc-info">
+          <div class="vc-stars">★★★★★</div>
+          <div class="vc-quote">"No sabía por dónde empezar. Barbara me dio el paso a paso y hoy tengo un crédito que me abre puertas."</div>
+          <div class="vc-author">Nelkys C.<span>USA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ URGENCY ══ -->
+  <section class="urgency">
+    <div class="urgency-inner">
+      <h2 class="reveal">Tu decisión <em>hoy</em><br>define lo que<br>puedes comprar <em>mañana.</em></h2>
+      <p class="reveal d1">No es un evento masivo. Es para personas comprometidas que quieren cambiar su situación financiera.</p>
+      <p class="reveal d2">Cuando se llenen los cupos, se cierra el registro. Sin excepciones.</p>
+      <div class="cd-bar reveal d3">
+        <div class="cd-lbl">La clase comienza en</div>
+        <div class="cd-timer">
+          <div class="cd-unit"><div class="cd-num" id="cdD">00</div><div class="cd-unit-lbl">Días</div></div>
+          <div class="cd-unit"><div class="cd-num" id="cdH">00</div><div class="cd-unit-lbl">Horas</div></div>
+          <div class="cd-unit"><div class="cd-num" id="cdM">00</div><div class="cd-unit-lbl">Min</div></div>
+          <div class="cd-unit"><div class="cd-num" id="cdS">00</div><div class="cd-unit-lbl">Seg</div></div>
+        </div>
+      </div>
+      <div class="reveal d4">
+        <a href="#registro" class="btn-gold">Asegurar mi cupo ahora — $147 USD
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ REGISTRO ══ -->
+  <section class="registro" id="registro">
+    <div class="registro-inner">
+      <div class="reg-copy">
+        <span style="display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:18px;">Registro</span>
+        <h2 class="reveal">¡Estás a un paso de<br><em>reservar tu lugar!</em></h2>
+        <p class="reveal d1">Completa el formulario y en menos de 24 horas recibes confirmación de tu registro, instrucciones de acceso y el siguiente paso concreto para comenzar.</p>
+        <div class="reg-trust reveal d2">
+          <div class="rt-item">Confirmación inmediata por email</div>
+          <div class="rt-item">Acceso presencial Miami + link Zoom</div>
+          <div class="rt-item">Replay disponible por tiempo limitado</div>
+          <div class="rt-item">Proceso 100% legal bajo FCRA y CROA</div>
+          <div class="rt-item">Sin mensualidades — pago único</div>
+        </div>
+      </div>
+      <div class="form-card reveal-right">
+        <!-- PROGRAMADOR: Reemplazar con embed de GoHighLevel -->
+        <h3>Reserva tu lugar</h3>
+        <p class="form-sub">Domingo 21 de junio · Presencial Miami + Zoom · $147 USD</p>
+        <form onsubmit="return false;">
+          <div class="form-group">
+            <label for="fname">Nombre *</label>
+            <input type="text" id="fname" placeholder="Tu nombre completo" required />
+          </div>
+          <div class="form-group">
+            <label for="femail">Correo electrónico *</label>
+            <input type="email" id="femail" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="fphone">Teléfono * (para recordatorio por SMS)</label>
+            <input type="tel" id="fphone" placeholder="+1 (555) 000-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="fscore">¿Cuál es tu score de crédito actual?</label>
+            <select id="fscore">
+              <option value="">Selecciona un rango (opcional)</option>
+              <option>Menos de 500</option>
+              <option>500 – 579</option>
+              <option>580 – 619</option>
+              <option>620 – 669</option>
+              <option>670 o más</option>
+              <option>No lo sé</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-form">RESERVAR MI CUPO — $147 USD</button>
+          <p class="form-disclaimer">Sin compromiso. Recibes confirmación en menos de 24 horas.<br>Tu información está protegida y nunca será vendida.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section class="faq" id="faq">
+    <div class="faq-inner">
+      <div class="faq-header reveal">
+        <h2>Preguntas <em>frecuentes</em></h2>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Esto es legal?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a">Sí. Todo el proceso se realiza bajo la ley FCRA (Fair Credit Reporting Act) y cumple con los estándares de la CROA. Barbara no usa tácticas genéricas — cada disputa es estratégica y documentada.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Cuánto tiempo toma ver resultados?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a">El proceso típico toma entre 90 y 120 días. Algunos casos son más rápidos. Los resultados varían según el historial individual — eso te lo decimos de frente, no en letra pequeña.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Qué pasa si tuve malas experiencias con otras empresas de credit repair?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a">Lo entendemos. Por eso el enfoque de Barbara es completamente diferente: educación + estrategia + acompañamiento real. No prometemos resultados mágicos ni usamos tácticas genéricas que las burós rechazan automáticamente.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Necesito vivir en Miami para asistir?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a">No. La clase es híbrida: presencial en Miami y en vivo por Zoom para toda USA. Recibirás el link de acceso al confirmar tu registro.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Puedo ir solo/a?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a">Sí. Vas a conectar con personas en situaciones similares a la tuya.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Qué incluye el plan de $697?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a">El plan DIY personalizado incluye auditoría completa de crédito, plan de acción personalizado, acceso al sistema de 90 días, material educativo completo, comunidad privada de WhatsApp y acompañamiento con sesión de mentoría. Pago único, sin mensualidades.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Si compro el plan completo en las primeras 24h, cuánto pago?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a">Si ya compraste la clase ($147) y decides adquirir el plan completo dentro de las primeras 24 horas después de la clase, solo pagas la diferencia: $550 USD en lugar de $697 USD.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1b5a1d97a92fe9673e.png" alt="Chang's Legacy" />
+          <div class="footer-logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
+        </div>
+        <p>Chang's Legacy LLC proporciona educación financiera y estrategia de crédito. No somos abogados, asesores financieros ni contadores. Los resultados de crédito varían según la situación individual. Los testimonios son experiencias reales pero no garantizan resultados similares.</p>
+        <div class="footer-social">
+          <a href="#" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" title="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.73a4.85 4.85 0 0 1-1.01-.04z"/></svg>
+          </a>
+          <a href="#" title="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos de Servicio</a>
+        <a href="#registro">Reservar mi lugar</a>
+        <a href="https://changslegacy.com" target="_blank">changslegacy.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        Chang's Legacy LLC · Educación financiera y estrategia de crédito.<br>
+        Los resultados individuales pueden variar. Chang's Legacy no garantiza resultados específicos de score crediticio.<br>
+        El proceso está regulado por la FCRA y la CROA. Testimonios con consentimiento escrito.
+      </p>
+      <span class="copy">© 2026 Chang's Legacy LLC. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ── NAV SCROLL ──
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // ── FLOATING CTA ──
+  const floatCta = document.getElementById('floatCta');
+  const hero = document.querySelector('.hero');
+  new IntersectionObserver(entries => {
+    floatCta.classList.toggle('show', !entries[0].isIntersecting);
+  }, { threshold: 0 }).observe(hero);
+
+  // ── REVEAL ──
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el => revealObs.observe(el));
+
+  // ── COUNTDOWN ──
+  function updateCd() {
+    const target = new Date('2026-06-21T14:00:00-04:00').getTime();
+    const diff = target - Date.now();
+    if (diff <= 0) { ['cdD','cdH','cdM','cdS'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent='00'; }); return; }
+    const pad = n => String(n).padStart(2,'0');
+    const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000), m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
+    [['cdD',d],['cdH',h],['cdM',m],['cdS',s]].forEach(([id,v]) => { const el = document.getElementById(id); if(el) el.textContent=pad(v); });
+  }
+  updateCd(); setInterval(updateCd, 1000);
+
+  // ── VIDEO CARDS ──
+  function toggleVideo(card) {
+    const video = card.querySelector('video');
+    if (!video) return;
+    if (card.classList.contains('playing')) {
+      video.pause();
+      card.classList.remove('playing');
+    } else {
+      document.querySelectorAll('.video-card.playing').forEach(c => {
+        const v = c.querySelector('video');
+        if (v) { v.pause(); v.currentTime = 0; }
+        c.classList.remove('playing');
+      });
+      video.play().catch(() => {});
+      card.classList.add('playing');
+    }
+  }
+
+  // ── VSL UNLOCK ──
+  let formUnlocked = false;
+  function unlockForm() {
+    if (formUnlocked) return;
+    formUnlocked = true;
+    const ph = document.getElementById('vslPlaceholder');
+    const bar = document.getElementById('vslUnlock');
+    if (ph) ph.style.display = 'none';
+    if (bar) bar.style.display = 'flex';
+  }
+
+  // ── FAQ ──
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>

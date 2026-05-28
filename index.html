@@ -14,12 +14,22 @@
   <meta property="og:type" content="website" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
-  <link rel="apple-touch-icon" href="assets/images/logo.png" />
+  <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1b5a1d97a92fe9673e.png" />
+  <link rel="apple-touch-icon" href="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1b5a1d97a92fe9673e.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
   <style>
+    /* GHL breakout — escapa el container de max-width de GoHighLevel */
+    .ghl-breakout {
+      width: 100vw !important;
+      position: relative !important;
+      left: 50% !important;
+      margin-left: -50vw !important;
+      max-width: 100vw !important;
+      box-sizing: border-box;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -1138,6 +1148,153 @@
       color: var(--gold);
     }
 
+    .next-step {
+      background: linear-gradient(135deg, #091733 0%, #112952 100%);
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .next-step::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(201,151,58,0.16), transparent 30%),
+        radial-gradient(circle at 85% 75%, rgba(255,255,255,0.05), transparent 28%);
+      pointer-events: none;
+    }
+
+    .next-step-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .next-step-copy h2 {
+      font-size: clamp(1.9rem, 3.4vw, 3rem);
+      font-weight: 900;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .next-step-copy h2 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .next-step-copy p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 14px;
+      max-width: 680px;
+    }
+
+    .next-step-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .next-step-point {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 18px 16px;
+    }
+
+    .next-step-point strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .next-step-point span {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .next-step-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,151,58,0.35);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+      align-self: center;
+    }
+
+    .next-step-card .mini-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+    }
+
+    .next-step-card h3 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .next-step-card p {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .next-step-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .next-step-card li {
+      color: rgba(255,255,255,0.84);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .next-step-card li::before {
+      content: '•';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .next-step-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.44);
+    }
+
     /* ─── ABOUT BARBARA ───────────────────────────── */
     .about {
       position: relative;
@@ -1148,7 +1305,7 @@
     .about-bg {
       position: absolute;
       inset: 0;
-      background: url('assets/images/hero.JPG') center 30% / cover no-repeat;
+      background: url('https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1afe2210f89e478c26.jpg') center 30% / cover no-repeat;
     }
 
     .about-overlay {
@@ -1866,6 +2023,9 @@
       .error-strip { min-height: auto; padding: 36px 0; }
       .error-strip-num { font-size: 5rem; opacity: 0.04; }
       .learn-cta { padding: 56px 20px; }
+      .next-step { padding: 64px 20px; }
+      .next-step-inner { grid-template-columns: 1fr; }
+      .next-step-points { grid-template-columns: 1fr; }
 
       /* about */
       .about { padding: 70px 24px; }
@@ -1936,6 +2096,7 @@
   </style>
 </head>
 <body>
+<div class="ghl-breakout">
 
   <!-- FLOATING CTA -->
   <div class="floating-cta" id="floatingCta">
@@ -1951,7 +2112,7 @@
   <!-- NAV -->
   <nav>
     <div class="logo">
-      <img src="assets/images/logo.png" alt="Chang's Legacy" class="logo-badge" />
+      <img src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1b5a1d97a92fe9673e.png" alt="Chang's Legacy" class="logo-badge" />
       <div class="logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
     </div>
     <a href="#registro" class="nav-cta">Reservar mi lugar</a>
@@ -1999,17 +2160,17 @@
 
       <!-- Video card -->
       <div class="hero-media">
-        <div class="hero-video-card">
-          <video id="heroVid" autoplay muted loop playsinline preload="auto"
-                 poster="assets/images/hero.JPG"
-                 src="assets/videos/hero-video.mp4"></video>
+        <div class="hero-video-card" id="heroVideoCard">
+          <video id="heroVid" loop playsinline preload="metadata"
+                 poster="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1afe2210f89e478c26.jpg"
+                 src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df18b656b3edc449d79d.mp4"></video>
           <div class="video-card-live">En vivo · 4 Jun</div>
           <button class="hero-vid-btn" id="heroVidBtn" aria-label="Reproducir video">
             <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
           </button>
           <div class="hero-unmute-hint" id="heroUnmuteHint">
             <svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zm4.07 2.93a8 8 0 0 1 0 11.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-            Toca para sonido
+            Toca para reproducir con sonido
           </div>
         </div>
       </div>
@@ -2090,7 +2251,7 @@
         </li>
         <li class="rejection-item">
           <div class="strike-bar"></div>
-          <span class="rejection-text">"Necesitamos un co-firmante."</span>
+          <span class="rejection-text">"Necesitamos un co firmante para el prestamo."</span>
           <span class="rejection-label">Insuficiente</span>
         </li>
         <li class="rejection-item">
@@ -2130,7 +2291,7 @@
       <!-- FOTO STICKY -->
       <div class="learn-photo-col">
         <div class="learn-photo-wrap">
-          <img src="assets/images/barbara.JPG" alt="Barbara Chang" />
+          <img src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1a3c3aed7c638bfe32.jpg" alt="Barbara Chang" />
         </div>
         <div class="learn-photo-quote">
           <p>"Nadie nace sabiendo cómo funciona el sistema crediticio americano. Pero una vez que lo entiendes, <em>todo cambia.</em>"</p>
@@ -2182,6 +2343,54 @@
 
   </section>
 
+  <section class="next-step">
+    <div class="next-step-inner">
+      <div class="next-step-copy reveal-left">
+        <span class="section-tag">Asi sigue el proceso</span>
+        <h2>El 4 de junio no es<br>el final. Es el <em>despertar.</em></h2>
+        <p>
+          Esta clase gratuita existe para darte claridad. Vas a entender que esta danando tu credito,
+          por que te siguen rechazando y cuales son los errores que debes parar de inmediato.
+        </p>
+        <p>
+          Despues, para las personas que quieran implementar el sistema completo, Barbara abrira la siguiente etapa:
+          la clase intensiva del 21 de junio y la ruta de "Credito Nuevo en 90 Dias".
+        </p>
+        <div class="next-step-points">
+          <div class="next-step-point reveal-scale">
+            <strong>4 de junio</strong>
+            <span>Entiendes el problema, identificas tus errores y sabes que te esta frenando.</span>
+          </div>
+          <div class="next-step-point reveal-scale reveal-delay-1">
+            <strong>Entre eventos</strong>
+            <span>Recibes seguimiento y la invitacion para continuar si quieres aplicar el metodo completo.</span>
+          </div>
+          <div class="next-step-point reveal-scale reveal-delay-2">
+            <strong>21 de junio</strong>
+            <span>Entras al como: estrategia, implementacion y el mapa del sistema paso a paso.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="next-step-card reveal-right">
+        <div class="mini-tag">Siguiente nivel · 21 de junio</div>
+        <h3>La segunda clase no repite esto. Lo convierte en plan.</h3>
+        <p>
+          Si esta primera clase te abre los ojos, la siguiente te enseña qué hacer con esa información:
+          cómo leer tu reporte, cómo disputar correctamente y cómo construir un historial nuevo.
+        </p>
+        <ul>
+          <li>Menos teoría general, más implementación paso a paso.</li>
+          <li>Menos "qué está mal", más "qué hago ahora".</li>
+          <li>Estrategia, ejecución y el sistema completo en 90 días.</li>
+        </ul>
+        <a href="21junio.html" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;background:#C9973A;color:#0B1C3D;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;padding:14px 24px;border-radius:100px;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;box-shadow:0 8px 28px rgba(201,151,58,.35);transition:background .2s;" onmouseover="this.style.background='#E8B84B'" onmouseout="this.style.background='#C9973A'">
+          Ver clase del 21 de junio — $147 USD →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <hr class="gold-divider" />
 
   <!-- ABOUT -->
@@ -2211,15 +2420,15 @@
 
         <div class="stats-row">
           <div class="stat">
-            <div class="stat-number">+<span>500</span></div>
-            <div class="stat-label">Familias ayudadas</div>
+            <div class="stat-number"><span>200</span>+</div>
+            <div class="stat-label">Familias hispanas atendidas</div>
           </div>
           <div class="stat">
             <div class="stat-number"><span>90</span></div>
-            <div class="stat-label">Días promedio de cambio</div>
+            <div class="stat-label">Días promedio de resultados</div>
           </div>
           <div class="stat">
-            <div class="stat-number"><span>10</span>+</div>
+            <div class="stat-number"><span>6</span>+</div>
             <div class="stat-label">Años de experiencia</div>
           </div>
         </div>
@@ -2227,56 +2436,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="video-grid">
-
-      <div class="video-card">
-        <video id="vid1" src="assets/videos/testimonio/Testimonio%201.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
-        <div class="video-overlay"></div>
-        <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-        <div class="video-info">
-          <div class="video-stars">★★★★★</div>
-          <p class="video-quote">"Tenía el crédito destruido. En 3 meses con Barbara califiqué para mi primer apartamento sola."</p>
-          <div class="video-author">María L. <span>Atlanta, Georgia</span></div>
-        </div>
-      </div>
-
-      <div class="video-card">
-        <video id="vid2" src="assets/videos/testimonio/Testimonio%202.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
-        <div class="video-overlay"></div>
-        <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-        <div class="video-info">
-          <div class="video-stars">★★★★★</div>
-          <p class="video-quote">"Me rechazaron 2 veces para un carro. En 90 días me aprobaron con una tasa que no esperaba."</p>
-          <div class="video-author">Carlos R. <span>Charlotte, NC</span></div>
-        </div>
-      </div>
-
-      <div class="video-card">
-        <video id="vid3" src="assets/videos/testimonio/Testimonio%203.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
-        <div class="video-overlay"></div>
-        <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-        <div class="video-info">
-          <div class="video-stars">★★★★★</div>
-          <p class="video-quote">"Por fin alguien que me explicó en español cómo funciona. Mi score subió 87 puntos en dos meses."</p>
-          <div class="video-author">Ana G. <span>Miami, Florida</span></div>
-        </div>
-      </div>
-
-      <div class="video-card">
-        <video id="vid4" src="assets/videos/testimonio/Testimonio%204.mp4" muted playsinline preload="metadata" onerror="this.closest('.video-card').classList.add('no-video')"></video>
-        <div class="video-overlay"></div>
-        <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-        <div class="video-info">
-          <div class="video-stars">★★★★★</div>
-          <p class="video-quote">"No sabía por dónde empezar. Barbara me dio el paso a paso y hoy tengo un crédito que me abre puertas."</p>
-          <div class="video-author">Laura M. <span>Houston, Texas</span></div>
-        </div>
-      </div>
-
-    </div>
-  </section>
 
   <!-- REGISTRO -->
   <section class="registro" id="registro">
@@ -2289,12 +2448,14 @@
           El 4 de junio te revelo exactamente cuáles son esos 3 errores,
           por qué hacen tanto daño sin que lo notes,
           y qué puedes hacer desde esa misma semana para empezar a cambiar tu situación.
+          Si decides seguir, ese mismo aprendizaje te prepara para la clase intensiva del 21 de junio.
         </p>
         <div class="registro-trust">
           <div class="registro-trust-item">100% gratuito, sin compromisos</div>
           <div class="registro-trust-item">Jueves 4 de junio · 7PM Atlanta (EDT)</div>
           <div class="registro-trust-item">Clase en vivo por Zoom, con preguntas en directo</div>
           <div class="registro-trust-item">Cupos limitados</div>
+          <div class="registro-trust-item">Te prepara para el siguiente paso del 21 de junio</div>
         </div>
       </div>
 
@@ -2314,24 +2475,23 @@
         </div>
         <p class="form-sub">Completa el formulario y te enviamos el link de acceso</p>
 
-        <!-- TODO: reemplazar con embed de GoHighLevel -->
-        <form onsubmit="return false;">
-          <div class="form-group">
-            <label>Nombre completo</label>
-            <input type="text" placeholder="Tu nombre" />
-          </div>
-          <div class="form-group">
-            <label>Correo electrónico</label>
-            <input type="email" placeholder="tu@correo.com" />
-          </div>
-          <div class="form-group">
-            <label>Teléfono (WhatsApp)</label>
-            <input type="tel" placeholder="+1 (000) 000-0000" />
-          </div>
-          <button type="submit" class="btn-registro">
-            Reservar mi lugar gratis ahora →
-          </button>
-        </form>
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/YlgJNF8jMdWPwd1jH3yt"
+          style="width:100%;height:100%;border:none;border-radius:0px"
+          id="inline-YlgJNF8jMdWPwd1jH3yt"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Formulario webinar"
+          data-height="475"
+          data-layout-iframe-id="inline-YlgJNF8jMdWPwd1jH3yt"
+          data-form-id="YlgJNF8jMdWPwd1jH3yt"
+          title="Formulario webinar">
+        </iframe>
 
         <p class="form-disclaimer">Tu información está segura. No spam, solo el link de acceso.</p>
         <div class="form-urgency">Los cupos se llenan antes del evento</div>
@@ -2346,7 +2506,7 @@
 
       <div class="footer-brand">
         <div class="logo">
-          <img src="assets/images/logo.png" alt="Chang's Legacy" class="logo-badge" />
+          <img src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1b5a1d97a92fe9673e.png" alt="Chang's Legacy" class="logo-badge" />
           <div class="logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
         </div>
         <p>
@@ -2489,12 +2649,11 @@
 
     scaleEls.forEach(el => scaleObserver.observe(el));
 
-    // ── Video cards: hover (desktop) + tap (mobile) ──
+    // ── Video cards: clic para play/pause con sonido ──
     document.querySelectorAll('.video-card').forEach(card => {
       const video = card.querySelector('video');
       if (!video) return;
 
-      // .playing class sigue el estado real del video
       video.addEventListener('play',  () => card.classList.add('playing'));
       video.addEventListener('pause', () => card.classList.remove('playing'));
       video.addEventListener('ended', () => {
@@ -2502,14 +2661,17 @@
         video.currentTime = 0;
       });
 
-      // Desktop: hover reproduce / sale pausa
-      card.addEventListener('mouseenter', () => video.play().catch(() => {}));
-      card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
-
-      // Mobile / click: tap alterna play-pause
       card.addEventListener('click', () => {
-        if (video.paused) { video.play().catch(() => {}); }
-        else              { video.pause(); video.currentTime = 0; }
+        if (video.paused) {
+          // Pausa todos los demás antes de reproducir
+          document.querySelectorAll('.video-card video').forEach(v => {
+            if (v !== video) { v.pause(); v.currentTime = 0; }
+          });
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
       });
     });
 
@@ -2529,43 +2691,97 @@
     window.addEventListener('resize', checkStrikes, { passive: true });
     checkStrikes();
 
-    // ── Hero video: autoplay + botón fallback + sonido en mobile ─
+    // ── Hero video: inicia pausado y el primer clic reproduce con sonido ──
     const heroVid = document.getElementById('heroVid');
     const heroBtn = document.getElementById('heroVidBtn');
     const heroUnmuteHint = document.getElementById('heroUnmuteHint');
-    const isMobileView = () => window.innerWidth <= 860 || ('ontouchstart' in window);
+    const heroVideoCard = document.getElementById('heroVideoCard');
 
-    if (heroVid && heroBtn) {
-      heroVid.addEventListener('play',  () => heroBtn.classList.add('hidden'));
-      heroVid.addEventListener('pause', () => heroBtn.classList.remove('hidden'));
+    if (heroVid && heroBtn && heroVideoCard) {
+      let hintHideTimer = null;
 
-      heroBtn.addEventListener('click', () => {
+      function hideHeroHint() {
+        if (!heroUnmuteHint) return;
+        heroUnmuteHint.classList.add('vanish');
+        clearTimeout(hintHideTimer);
+        hintHideTimer = setTimeout(() => {
+          heroUnmuteHint.style.display = 'none';
+        }, 400);
+      }
+
+      function showHeroHint() {
+        if (!heroUnmuteHint) return;
+        clearTimeout(hintHideTimer);
+        heroUnmuteHint.classList.remove('vanish');
+        heroUnmuteHint.style.display = 'flex';
+      }
+
+      function syncHeroVideoUi() {
+        const isPaused = heroVid.paused;
+        heroBtn.classList.toggle('hidden', !isPaused);
+        heroBtn.setAttribute('aria-label', isPaused ? 'Reproducir video' : 'Pausar video');
+      }
+
+      async function playHeroVideoWithSound() {
         heroVid.muted = false;
-        heroVid.play().catch(() => { heroVid.muted = true; heroVid.play().catch(() => {}); });
+        heroVid.volume = 1;
+
+        try {
+          await heroVid.play();
+          hideHeroHint();
+        } catch (error) {
+          console.warn('Hero video no pudo reproducirse con sonido:', error);
+          showHeroHint();
+        } finally {
+          syncHeroVideoUi();
+        }
+      }
+
+      function toggleHeroVideoPlayback() {
+        if (heroVid.paused) {
+          playHeroVideoWithSound();
+        } else {
+          heroVid.pause();
+          syncHeroVideoUi();
+        }
+      }
+
+      heroBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleHeroVideoPlayback();
       });
 
-      heroVid.play()
-        .then(() => heroBtn.classList.add('hidden'))
-        .catch(() => { /* botón visible */ });
+      heroVid.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleHeroVideoPlayback();
+      });
 
-      // Mobile: unmute al tocar el botón o el video directamente
-      if (isMobileView() && heroUnmuteHint) {
-        const doUnmute = () => {
-          heroVid.muted = false;
-          if (heroVid.paused) heroVid.play().catch(() => { heroVid.muted = true; });
-          heroUnmuteHint.classList.add('vanish');
-          setTimeout(() => { heroUnmuteHint.style.display = 'none'; }, 400);
-          heroVid.removeEventListener('click', doUnmute);
-          heroUnmuteHint.removeEventListener('click', doUnmute);
-        };
-        heroUnmuteHint.addEventListener('click', doUnmute);
-        heroVid.addEventListener('click', doUnmute);
-      } else if (heroUnmuteHint) {
-        heroUnmuteHint.style.display = 'none';
+      heroVideoCard.addEventListener('click', (e) => {
+        if (e.target === heroBtn || heroBtn.contains(e.target) || e.target === heroVid) return;
+        toggleHeroVideoPlayback();
+      });
+
+      heroVid.addEventListener('play', syncHeroVideoUi);
+      heroVid.addEventListener('pause', syncHeroVideoUi);
+
+      if (heroUnmuteHint) {
+        showHeroHint();
+        heroUnmuteHint.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          playHeroVideoWithSound();
+        });
       }
+
+      heroVid.pause();
+      heroVid.currentTime = 0;
+      syncHeroVideoUi();
     }
 
   </script>
 
+</div><!-- /ghl-breakout -->
 </body>
 </html>

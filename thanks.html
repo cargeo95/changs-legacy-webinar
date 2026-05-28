@@ -1,0 +1,369 @@
+<!-- Chang's Legacy — Thanks Page — GHL Custom HTML Block -->
+<div class="changs-thanks ghl-breakout">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── GHL BREAKOUT ─────────────────────────── */
+    .ghl-breakout {
+      width: 100vw !important;
+      position: relative !important;
+      left: 50% !important;
+      right: 50% !important;
+      margin-left: -50vw !important;
+      margin-right: -50vw !important;
+      max-width: 100vw !important;
+      overflow-x: hidden !important;
+      box-sizing: border-box;
+    }
+    .ghl-breakout *, .ghl-breakout *::before, .ghl-breakout *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ─── WRAPPER = el nuevo "body" ─────────────── */
+    .changs-thanks {
+      font-family: 'Open Sans', sans-serif;
+      background: #0B1C3D;
+      color: #FFFFFF;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    .changs-thanks::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,151,58,0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(26,58,107,0.5) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── CONTENIDO ─────────────────────────────── */
+    .ct-page {
+      position: relative;
+      z-index: 1;
+      max-width: 580px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .ct-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .ct-logo img { width: 40px; height: 40px; object-fit: contain; }
+    .ct-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.3;
+      text-align: left;
+    }
+    .ct-logo-text span { color: #C9973A; }
+
+    .ct-check {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: rgba(201,151,58,0.12);
+      border: 2px solid rgba(201,151,58,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+      animation: ct-pop 0.6s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .ct-check svg {
+      width: 48px; height: 48px;
+      stroke: #C9973A;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: ct-draw 0.5s ease 0.4s forwards;
+    }
+    @keyframes ct-pop {
+      from { opacity: 0; transform: scale(0.5); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes ct-draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .ct-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,151,58,0.1);
+      border: 1px solid rgba(201,151,58,0.35);
+      color: #E8B84B;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .ct-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #C9973A;
+      animation: ct-pulse 1.6s infinite;
+    }
+    @keyframes ct-pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.4; transform:scale(1.5); }
+    }
+
+    .ct-page h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: #FFFFFF;
+    }
+    .ct-page h1 em { font-style: normal; color: #C9973A; }
+
+    .ct-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .ct-card {
+      background: rgba(17,41,82,0.6);
+      border: 1px solid rgba(201,151,58,0.2);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+    .ct-card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #C9973A;
+      margin-bottom: 20px;
+    }
+    .ct-detail {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .ct-detail:last-child { border-bottom: none; }
+    .ct-detail-icon { font-size: 1.2rem; flex-shrink: 0; width: 28px; text-align: center; }
+    .ct-detail-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #FFFFFF;
+    }
+    .ct-detail-text small {
+      display: block;
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 2px;
+    }
+
+    .ct-btn-cal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #C9973A;
+      color: #0B1C3D;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 16px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 8px 32px rgba(201,151,58,0.35);
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    .ct-btn-cal:hover {
+      background: #E8B84B;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 44px rgba(201,151,58,0.5);
+    }
+    .ct-btn-cal svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; }
+
+    .ct-share-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin: 28px 0 16px;
+    }
+    .ct-share-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .ct-share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      padding: 10px 20px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      cursor: pointer;
+      background-color: transparent;
+    }
+    .ct-share-btn:hover {
+      background: rgba(201,151,58,0.1);
+      border-color: rgba(201,151,58,0.3);
+      color: #E8B84B;
+    }
+    .ct-share-btn svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+
+    .ct-disclaimer {
+      margin-top: 48px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 480px) {
+      .changs-thanks { padding: 40px 20px; }
+      .ct-card { padding: 20px; }
+      .ct-share-btns { flex-direction: column; align-items: center; }
+      .ct-share-btn { width: 100%; justify-content: center; }
+    }
+  </style>
+
+  <div class="ct-page">
+
+    <div class="ct-logo">
+      <img src="https://assets.cdn.filesafe.space/CNCkGFjFGoDF3g5NTni7/media/6a10df1b5a1d97a92fe9673e.png" alt="Chang's Legacy" />
+      <div class="ct-logo-text">Chang's <span>Legacy</span><br>Financial Services</div>
+    </div>
+
+    <div class="ct-check">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <div class="ct-pill">
+      <span class="ct-dot"></span>
+      Registro confirmado
+    </div>
+
+    <h1>¡Ya tienes<br>tu <em>lugar!</em></h1>
+
+    <p class="ct-sub">
+      Revisa tu correo — te enviamos el enlace de Zoom.<br>
+      Si no lo ves en unos minutos, revisa tu carpeta de spam.
+    </p>
+
+    <div class="ct-card">
+      <div class="ct-card-title">Detalles de tu clase</div>
+      <div class="ct-detail">
+        <div class="ct-detail-icon">📅</div>
+        <div class="ct-detail-text">
+          Jueves 4 de junio de 2026
+          <small>Marca esta fecha en tu calendario</small>
+        </div>
+      </div>
+      <div class="ct-detail">
+        <div class="ct-detail-icon">🕖</div>
+        <div class="ct-detail-text">
+          7:00 PM Atlanta (EDT)
+          <small>6PM Ciudad de México · 8PM Argentina</small>
+        </div>
+      </div>
+      <div class="ct-detail">
+        <div class="ct-detail-icon">💻</div>
+        <div class="ct-detail-text">
+          En vivo por Zoom
+          <small>El link llega a tu correo</small>
+        </div>
+      </div>
+      <div class="ct-detail">
+        <div class="ct-detail-icon">✅</div>
+        <div class="ct-detail-text">
+          100% Gratuito
+          <small>Sin costo, sin tarjeta</small>
+        </div>
+      </div>
+    </div>
+
+    <a class="ct-btn-cal"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Los+3+Errores+que+Destrozan+tu+Crédito+en+USA+—+Chang%27s+Legacy&dates=20260604T230000Z/20260605T010000Z&details=Clase+gratuita+con+Barbara+Chang.+El+link+de+Zoom+llega+a+tu+correo.&location=Zoom"
+       target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Agregar a Google Calendar
+    </a>
+
+    <div class="ct-share-label">Comparte con alguien que lo necesite</div>
+    <div class="ct-share-btns">
+      <a class="ct-share-btn"
+         href="https://wa.me/?text=Me%20anoté%20gratis%20a%20una%20clase%20sobre%20cómo%20mejorar%20el%20crédito%20en%20USA.%20El%204%20de%20junio%207PM%20Atlanta%20con%20Barbara%20Chang.%20Únete%20aquí%3A%20https%3A%2F%2Fchangs-legacy.com%2Fwebinar-4-junio-2026"
+         target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.46 2.13 11.92c0 1.95.51 3.84 1.48 5.51L2 22l4.7-1.53a9.86 9.86 0 0 0 5.34 1.56h.01c5.46 0 9.91-4.46 9.91-9.92S17.5 2 12.04 2zm0 18.17h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-2.79.91.91-2.72-.2-.31a8.18 8.18 0 0 1-1.26-4.37c0-4.52 3.68-8.2 8.2-8.2 4.52 0 8.2 3.68 8.2 8.2 0 4.52-3.68 8.2-8.2 8.2zm4.52-6.13c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.29.19-.54.06-.25-.13-1.06-.39-2.01-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.24.25-.4.08-.17.04-.31-.02-.43-.06-.13-.57-1.37-.78-1.87-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.43.06-.65.31-.22.25-.85.83-.85 2.02s.87 2.34.99 2.5c.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.15 1.53.09.47-.07 1.48-.6 1.69-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+        WhatsApp
+      </a>
+      <a class="ct-share-btn"
+         href="https://www.facebook.com/sharer/sharer.php?u=https://changs-legacy.com/webinar-4-junio-2026"
+         target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </a>
+      <button class="ct-share-btn" onclick="ctCopyLink()">
+        <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span id="ctCopyLabel">Copiar enlace</span>
+      </button>
+    </div>
+
+    <p class="ct-disclaimer">
+      Chang's Legacy LLC · Educación financiera y estrategia de crédito.<br>
+      Los resultados individuales pueden variar. © 2026 Chang's Legacy LLC.
+    </p>
+
+  </div>
+
+  <script>
+    function ctCopyLink() {
+      const url = 'https://changs-legacy.com/webinar-4-junio-2026';
+      navigator.clipboard.writeText(url).then(() => {
+        const label = document.getElementById('ctCopyLabel');
+        label.textContent = '¡Copiado!';
+        setTimeout(() => { label.textContent = 'Copiar enlace'; }, 2000);
+      }).catch(() => {
+        prompt('Copia este enlace:', url);
+      });
+    }
+  </script>
+
+</div>
