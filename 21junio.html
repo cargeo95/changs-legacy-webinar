@@ -178,6 +178,12 @@
     .vsl-play svg { width:32px; height:32px; fill:var(--navy); margin-left:6px; }
     .vsl-play-text { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.95rem; color:rgba(255,255,255,.65); letter-spacing:.04em; }
     .vsl-caption { text-align:center; margin-top:20px; font-size:.82rem; color:rgba(255,255,255,.35); font-style:italic; }
+    .vsl-yt-thumb { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; text-decoration:none; cursor:pointer; overflow:hidden; }
+    .vsl-yt-thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .vsl-yt-thumb:hover img { transform:scale(1.04); }
+    .vsl-yt-dim { position:absolute; inset:0; background:linear-gradient(135deg,rgba(6,10,24,.55),rgba(11,28,61,.4)); }
+    .vsl-yt-thumb .vsl-play { position:relative; z-index:1; }
+    .vsl-yt-thumb .vsl-play-text { position:relative; z-index:1; }
     .vsl-unlock { display:flex; align-items:center; justify-content:center; gap:12px; margin-top:20px; padding:16px 24px; background:rgba(201,151,58,.08); border:1px solid rgba(201,151,58,.2); border-radius:10px; }
     .vsl-unlock p { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.82rem; color:rgba(255,255,255,.6); }
     .vsl-unlock.unlocked { background:rgba(37,160,80,.1); border-color:rgba(37,160,80,.4); }
@@ -553,16 +559,21 @@
     </div>
   </div>
 
-  <!-- ══ CONEXIÓN 4 JUNIO ══ -->
+  <!-- ══ CONEXIÓN WEBINARS ══ -->
   <div style="background:#0B1C3D;border-top:1px solid rgba(201,151,58,.2);border-bottom:1px solid rgba(201,151,58,.2);padding:18px 40px;">
     <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
       <p style="font-family:'Montserrat',sans-serif;font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.5;margin:0;">
-        <strong style="color:#C9973A;">¿Asististe al webinar gratuito del 4 de junio?</strong><br>
+        <strong style="color:#C9973A;">¿Asististe al webinar del 4 o del 11 de junio?</strong><br>
         Ya sabes qué está roto. Esta clase es el cómo — el sistema completo para arreglarlo.
       </p>
-      <a href="index.html" style="flex-shrink:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;color:#C9973A;text-decoration:none;border:1px solid rgba(201,151,58,.4);padding:8px 18px;border-radius:100px;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='rgba(201,151,58,.1)'" onmouseout="this.style.background='transparent'">
-        ← Ver webinar gratuito
-      </a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;">
+        <a href="index.html" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;color:#C9973A;text-decoration:none;border:1px solid rgba(201,151,58,.4);padding:8px 18px;border-radius:100px;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='rgba(201,151,58,.1)'" onmouseout="this.style.background='transparent'">
+          ← Webinar 4 jun
+        </a>
+        <a href="11junio.html" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;color:#C9973A;text-decoration:none;border:1px solid rgba(201,151,58,.4);padding:8px 18px;border-radius:100px;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='rgba(201,151,58,.1)'" onmouseout="this.style.background='transparent'">
+          ← Webinar 11 jun
+        </a>
+      </div>
     </div>
   </div>
 
@@ -573,17 +584,15 @@
       <h2 class="vsl-title reveal">Barbara te explica exactamente<br><em>qué vas a lograr el 21 de junio</em></h2>
       <div class="vsl-frame reveal">
         <div class="vsl-ratio">
-          <!-- PROGRAMADOR: Reemplazar con iframe de PandaVideo o Vimeo -->
-          <div class="vsl-placeholder" id="vslPlaceholder" onclick="unlockForm()">
+          <a class="vsl-yt-thumb" href="https://youtu.be/ls-vGtv4XzM" target="_blank" rel="noopener" aria-label="Ver video de Barbara Chang en YouTube">
+            <img src="https://img.youtube.com/vi/ls-vGtv4XzM/maxresdefault.jpg" alt="Barbara Chang — Lo que vas a lograr el 21 de junio" />
+            <div class="vsl-yt-dim"></div>
             <div class="vsl-play">
               <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
             </div>
-            <div class="vsl-play-text">Haz clic para reproducir el video de Barbara</div>
-          </div>
+            <div class="vsl-play-text">Ver en YouTube</div>
+          </a>
         </div>
-      </div>
-      <div class="vsl-unlock" id="vslUnlock" style="display:none;">
-        <p id="vslUnlockText">✓ Video visto · Formulario desbloqueado</p>
       </div>
     </div>
   </section>
